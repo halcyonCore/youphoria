@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "164318871718",
+    "project_id": "youphoria-813bb",
+    "storage_bucket": "youphoria-813bb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:164318871718:android:2d349f993dc8a6de40b467",
+        "android_client_info": {
+          "package_name": "io.halcyoncore.youphoria"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "164318871718-v3ihgetve1kjma5r44qqs7l47h2a5epf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAlzp7QoUrk0Zon6aazCgk-p8rP4HLk7SI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "164318871718-v3ihgetve1kjma5r44qqs7l47h2a5epf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
