@@ -49,7 +49,7 @@ class _AppState extends State<App> {
         if (snapshot.connectionState == ConnectionState.done) {
           return MaterialApp(
             title: 'Youphoria',
-            home: ExploreScreen(),
+            home: const LoginScreen(),
             routes: appRoutes,
             theme: appTheme,
           );

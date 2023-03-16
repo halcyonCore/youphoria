@@ -11,11 +11,12 @@ class ExploreScreen extends StatelessWidget {
     return Scaffold(
       bottomNavigationBar: const BottomNavBar(),
       body: Center(
-          child: ElevatedButton(
-        child: const Text("fyp"),
-        // style: Theme.of(context).elevatedButtonTheme.style,
-        onPressed: () => Navigator.pushNamed(context, '/fyp'),
-      )),
+        child: ElevatedButton(
+          child: const Text("go to login"),
+          // style: Theme.of(context).elevatedButtonTheme.style,
+          onPressed: () => Navigator.pushNamed(context, '/login'),
+        ),
+      ),
     );
   }
 }
