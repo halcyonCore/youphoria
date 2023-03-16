@@ -36,14 +36,14 @@ dependencies:
   cloud_firestore: ^3.1.18
   firebase_auth: ^3.3.20
   firebase_core_platform_interface: 4.5.1 #new FIXES EVERYTHING 🔥
-  # firebase_auth: 4.1.0 //new
-  # firebase_core: 2.1.1 // new
-  # cloud_firestore: 4.0.3 // new
-  # google_sign_in: 5.3.3
-  # sign_in_with_apple: 4.0.0
-  # crypto: 3.0.1
-  # font_awesome_flutter: 10.1.0
-  # google_fonts: 3.0.1
+  firebase_auth_platform_interface: ^6.1.10
+  google_sign_in: ^5.3.3
+  sign_in_with_apple: ^4.0.0
+  crypto: ^3.0.1
+  font_awesome_flutter: ^10.1.0
+  google_fonts: ^3.0.1
+  # path_provider: ^2.0.8
+
   # provider: 6.0.3
   # rxdart: 0.27.4
   # json_annotation: 4.5.0
