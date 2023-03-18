@@ -2,12 +2,16 @@ import 'package:youphoria/explore/explore.dart';
 import 'package:youphoria/fyp/fyp.dart';
 import 'package:youphoria/login/login.dart';
 import 'package:youphoria/search/search.dart';
-import 'package:youphoria/user/user.dart';
+import 'package:youphoria/profile/profile.dart';
+import 'package:youphoria/home/home.dart';
+import 'package:flutter/material.dart';
+import 'package:youphoria/shared/test_home_screen.dart';
 
 var appRoutes = {
   '/login': (context) => const LoginScreen(),
-  '/user': (context) => const UserScreen(),
+  '/profile': (context) => const ProfileScreen(),
   '/search': (context) => const SearchScreen(),
   '/fyp': (context) => const FypScreen(),
-  '/': (context) => const ExploreScreen(),
+  '/home': (context) => const HomeScreen(),
+  '/explore': (context) => const ExploreScreen(),
 };
