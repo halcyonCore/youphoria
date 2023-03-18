@@ -77,36 +77,97 @@ class ExploreScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text(
           'Explore',
-          // style: TextStyle(fontFamily: 'CuteDropCaps', fontSize: 50),
+          style: TextStyle(fontWeight: FontWeight.bold),
         ),
       ),
-      body: GridView.count(
-        // primary: false,
-        // padding: const EdgeInsets.all(20),
-        // crossAxisSpacing: 20,
-        crossAxisCount: 2,
-        childAspectRatio: 1.6,
-        children: List.generate(
-          dummyTopics.length,
-          (index) {
-            final topic = dummyTopics[index];
-            return Container(
-              margin: const EdgeInsets.all(4),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(18),
-                child: Card(
+      body: SingleChildScrollView(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Flexible(
+              child: Padding(
+                padding:
+                    const EdgeInsets.only(top: 10.0, right: 8.0, left: 11.0),
+                child: Container(
+                  alignment: Alignment.topLeft,
+                  child: const Text(
+                    "For You Page",
+                    textAlign: TextAlign.left,
+                  ),
+                ),
+              ),
+            ),
+            Flexible(
+              child: Padding(
+                padding:
+                    const EdgeInsets.only(top: 10.0, right: 12.0, left: 12.0),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(18),
                   child: Column(
                     children: [
-                      Expanded(
-                        child: Placeholder(),
+                      SizedBox(
+                        height: 200,
+                        child: Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(6),
+                            image: const DecorationImage(
+                              image: AssetImage(
+                                  'assets/images/gradient-placeholder.png'),
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        ),
                       ),
-                      // Text(topic.name),
                     ],
                   ),
                 ),
               ),
-            );
-          },
+            ),
+            Flexible(
+              child: Padding(
+                padding:
+                    const EdgeInsets.only(top: 10.0, right: 8.0, left: 11.0),
+                child: Container(
+                  alignment: Alignment.topLeft,
+                  child: const Text(
+                    "Browse all",
+                    textAlign: TextAlign.left,
+                  ),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(4.0),
+              child: GridView.count(
+                physics: const NeverScrollableScrollPhysics(),
+                shrinkWrap: true,
+                crossAxisCount: 2,
+                childAspectRatio: 1.6,
+                children: List.generate(
+                  dummyTopics.length,
+                  (index) {
+                    final topic = dummyTopics[index];
+                    return Container(
+                      margin: const EdgeInsets.all(8),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(6),
+                        image: const DecorationImage(
+                          image: AssetImage(
+                              'assets/images/gradient-placeholder.png'),
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                      child: Flex(
+                        direction: Axis.vertical,
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [],
+                      ),
+                    );
+                  },
+                ),
+              ),
+            ),
+          ],
         ),
       ),
       bottomNavigationBar: const BottomNavBar(),
