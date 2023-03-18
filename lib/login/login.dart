@@ -80,8 +80,7 @@ class LoginButton extends StatelessWidget {
           } else {
             ScaffoldMessenger.of(context).showSnackBar(
               const SnackBar(
-                  content:
-                      Text('Error logging in as guest. Please try again.')),
+                  content: Text('Error logging in. Please try again.')),
             );
           }
         },
