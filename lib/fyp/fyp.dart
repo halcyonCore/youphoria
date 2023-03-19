@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:youphoria/services/services.dart';
 import 'package:youphoria/shared/shared.dart';
-import 'package:youphoria/services/models.dart';
+import 'package:youphoria/services/models/models.dart';
 
-Communication getModel() {
-  final communication = Communication();
-  communication.setData();
-  return communication;
-}
-
-Communication c = getModel();
+// Communication getModel() {
+//   final communication = Communication();
+//   communication.setData();
+//   return communication;
+// }
 
 class FypScreen extends StatelessWidget {
   const FypScreen({super.key});
@@ -26,11 +24,15 @@ class FypScreen extends StatelessWidget {
             ),
             ElevatedButton(
               child: const Text('Get Title'),
-              onPressed: () => {print(c.title)},
+              onPressed: () => {print(hotlines_obj.title)},
             ),
             ElevatedButton(
               child: const Text('Get Description'),
-              onPressed: () => {print(c.description)},
+              onPressed: () => {print(hotlines_obj.description)},
+            ),
+            ElevatedButton(
+              child: const Text('Get subtopics'),
+              onPressed: () => {print(hotlines_obj.subtopics[0]['title'])},
             ),
           ],
         ),
