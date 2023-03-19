@@ -12,6 +12,7 @@ class ProfileScreen extends StatelessWidget {
         automaticallyImplyLeading: false,
         title: const Text("Profile"),
       ),
+     
       body: ElevatedButton(
         child: const Text("Sign out"),
         onPressed: () async {
