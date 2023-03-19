@@ -14,7 +14,7 @@ class LoginScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Text(
+            const Text(
               'YOUphoria',
               style: TextStyle(
                 fontSize: 40,
@@ -24,7 +24,7 @@ class LoginScreen extends StatelessWidget {
             ),
             Flexible(
               child: LoginButton(
-                color: Colors.deepPurple,
+                color: const Color(0xFF9F65EE),
                 icon: FontAwesomeIcons.userAstronaut,
                 text: 'Continue as guest',
                 loginMethod: AuthService().anonLogin,
@@ -64,7 +64,6 @@ class LoginButton extends StatelessWidget {
       child: ElevatedButton.icon(
         icon: Icon(
           icon,
-          color: Colors.white,
           size: 20,
         ),
         style: TextButton.styleFrom(

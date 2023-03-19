@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:youphoria/shared/bottom_nav.dart';
 
 class SearchScreen extends StatelessWidget {
   const SearchScreen({super.key});
@@ -7,8 +6,15 @@ class SearchScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
-      bottomNavigationBar: const BottomNavBar(),
+      backgroundColor: const Color(0xFF0c1421),
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        backgroundColor: const Color(0xFF0c1421),
+        title: const Text(
+          'Search',
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
+      ),
     );
   }
 }

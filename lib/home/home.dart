@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:youphoria/login/login.dart';
-import 'package:youphoria/explore/explore.dart';
 import 'package:youphoria/services/auth.dart';
+import 'package:youphoria/shared/navigation.dart';
 // import 'package:youphoria/shared/shared.dart'; # import future error message screen
 
 class HomeScreen extends StatelessWidget {
@@ -19,7 +19,7 @@ class HomeScreen extends StatelessWidget {
               child: Text('Something went wrong'),
             );
           } else if (snapshot.hasData) {
-            return const ExploreScreen();
+            return const Navigation();
           } else {
             return const LoginScreen();
           }

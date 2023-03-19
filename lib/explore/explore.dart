@@ -1,7 +1,6 @@
 // import 'package:flutter/src/widgets/framework.dart';
 // import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter/material.dart';
-import 'package:youphoria/shared/bottom_nav.dart';
 import 'package:youphoria/shared/loading.dart';
 // import 'package:youphoria/shared/models/topic.dart';
 
@@ -26,55 +25,16 @@ final List<Topic> dummyTopics = [
 ];
 // END DUMMY DATA
 
-// class ExploreScreen extends StatelessWidget {
-//   const ExploreScreen({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return FutureBuilder<List<Topic>>(
-//       // future: FirestoreService().getTopics(),
-//       builder: (context, snapshot) {
-//         if (snapshot.connectionState == ConnectionState.waiting) {
-//           return const LoadingScreen();
-//         } else if (snapshot.hasError) {
-//           return Center(child: Text('Error: ${snapshot.error}'));
-//         } else if {
-//           return Scaffold(
-//             appBar: AppBar(
-//               title: const Text('Explore Topics'),
-//             ),
-//             body: GridView.count(
-//               crossAxisCount: 2,
-//               children: snapshot.data!.map((topic) { // used copilot to generate - check with tutorial if issues
-//                 return Card(
-//                   child: Column(
-//                     children: [
-//                       Expanded(
-//                         child: Placeholder(),
-//                       ),
-//                       Text(topic.name),
-//                     ],
-//                   ),
-//                 );
-//               }).toList(),
-//             ),
-//             bottomNavigationBar: const BottomNavBar(),
-//           );
-//         } else {
-//           return const Text("No topics found in Firestore. Check database");
-//         }
-//       },
-//     );
-//   }
-// }
-
 class ExploreScreen extends StatelessWidget {
   const ExploreScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xFF0c1421),
       appBar: AppBar(
+        automaticallyImplyLeading: false,
+        backgroundColor: const Color(0xFF0c1421),
         title: const Text(
           'Explore',
           style: TextStyle(fontWeight: FontWeight.bold),
@@ -84,6 +44,7 @@ class ExploreScreen extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
+            // For You Page Text
             Flexible(
               child: Padding(
                 padding:
@@ -97,16 +58,27 @@ class ExploreScreen extends StatelessWidget {
                 ),
               ),
             ),
+            // Container for button
             Flexible(
               child: Padding(
                 padding:
                     const EdgeInsets.only(top: 10.0, right: 12.0, left: 12.0),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(18),
-                  child: Column(
-                    children: [
-                      SizedBox(
-                        height: 200,
+                child: Column(
+                  children: [
+                    SizedBox(
+                      height: 200,
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/fyp');
+                        },
+                        clipBehavior: Clip.antiAlias, // <--add this
+                        style: ElevatedButton.styleFrom(
+                          shape: RoundedRectangleBorder(
+                            borderRadius:
+                                BorderRadius.circular(18.0), // <--add this
+                          ),
+                          padding: EdgeInsets.zero, // <--add this
+                        ),
                         child: Container(
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(6),
@@ -118,11 +90,12 @@ class ExploreScreen extends StatelessWidget {
                           ),
                         ),
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ),
             ),
+            // Browse all text
             Flexible(
               child: Padding(
                 padding:
@@ -136,6 +109,7 @@ class ExploreScreen extends StatelessWidget {
                 ),
               ),
             ),
+            // Container for grid of topics
             Padding(
               padding: const EdgeInsets.all(4.0),
               child: GridView.count(
@@ -149,18 +123,29 @@ class ExploreScreen extends StatelessWidget {
                     final topic = dummyTopics[index];
                     return Container(
                       margin: const EdgeInsets.all(8),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(6),
-                        image: const DecorationImage(
-                          image: AssetImage(
-                              'assets/images/gradient-placeholder.png'),
-                          fit: BoxFit.cover,
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/fyp');
+                        },
+                        clipBehavior: Clip.antiAlias, // <--add this
+                        style: ElevatedButton.styleFrom(
+                          shape: RoundedRectangleBorder(
+                            borderRadius:
+                                BorderRadius.circular(18.0), // <--add this
+                          ),
+                          padding: EdgeInsets.zero,
+                          // <--add this
                         ),
-                      ),
-                      child: Flex(
-                        direction: Axis.vertical,
-                        crossAxisAlignment: CrossAxisAlignment.stretch,
-                        children: [],
+                        child: Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(6),
+                            image: const DecorationImage(
+                              image: AssetImage(
+                                  'assets/images/gradient-placeholder.png'),
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        ),
                       ),
                     );
                   },
@@ -170,7 +155,7 @@ class ExploreScreen extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: const BottomNavBar(),
+      // bottomNavigationBar: BottomNavigationBar(),
     );
   }
 }

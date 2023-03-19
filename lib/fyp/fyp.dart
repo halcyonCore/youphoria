@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:youphoria/shared/bottom_nav.dart';
 
 class FypScreen extends StatelessWidget {
   const FypScreen({super.key});
@@ -7,8 +6,14 @@ class FypScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
-      bottomNavigationBar: const BottomNavBar(),
+      backgroundColor: const Color(0xFF0c1421),
+      appBar: AppBar(
+        backgroundColor: const Color(0xFF0c1421),
+        title: const Text(
+          'FYP',
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
+      ),
     );
   }
 }
