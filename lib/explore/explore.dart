@@ -122,27 +122,26 @@ class ExploreScreen extends StatelessWidget {
                   (index) {
                     final topic = dummyTopics[index];
                     return Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(6),
-                        image: const DecorationImage(
-                          image: AssetImage(
-                              'assets/images/gradient-placeholder.png'),
-                          fit: BoxFit.cover,
-                        ),
-                      ),
                       margin: const EdgeInsets.all(8),
                       child: ElevatedButton(
                         onPressed: () {
-                          Navigator.pushNamed(context, '/fyp');
+                          Navigator.pushNamed(context, '/communication');
                         },
+                        clipBehavior: Clip.antiAlias, // <--add this
+                        style: ElevatedButton.styleFrom(
+                          shape: RoundedRectangleBorder(
+                            borderRadius:
+                                BorderRadius.circular(18.0), // <--add this
+                          ),
+                          padding: EdgeInsets.zero, // <--add this
+                        ),
                         child: Container(
-                          alignment: Alignment.topLeft,
-                          child: Padding(
-                            padding: const EdgeInsets.only(
-                                top: 12.0, right: 8.0, left: 2.0),
-                            child: Text(
-                              "Title",
-                              textAlign: TextAlign.left,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(6),
+                            image: const DecorationImage(
+                              image: AssetImage(
+                                  'assets/images/topic-communication.png'),
+                              fit: BoxFit.cover,
                             ),
                           ),
                         ),
