@@ -12,15 +12,14 @@ Communication getModel() {
 
 Communication c = getModel();
 
+
 class FypScreen extends StatelessWidget {
   const FypScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('FYP'),
-      ),
+
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -39,7 +38,14 @@ class FypScreen extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: const BottomNavBar(),
+      backgroundColor: const Color(0xFF0c1421),
+      appBar: AppBar(
+        backgroundColor: const Color(0xFF0c1421),
+        title: const Text(
+          'FYP',
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
+      ),
     );
   }
 }
