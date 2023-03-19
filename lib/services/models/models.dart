@@ -1,14 +1,3 @@
-export 'Communication.dart';
-// export 'Communication.dart';
-// export 'Consent.dart';
-// export 'Contraception.dart';
-// export 'Gender.dart';
-// export 'Hotlines.dart';
-// export 'Puberty.dart';
-// export 'Resources.dart';
-// export 'SexualOrientation.dart';
-// export 'Sti.dart';
-
 import 'Communication.dart';
 import 'Consent.dart';
 import 'Contraception.dart';
