@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:youphoria/shared/bottom_nav.dart';
 import 'package:youphoria/services/services.dart';
 import 'package:youphoria/shared/shared.dart';
 import 'package:youphoria/services/models.dart';
@@ -12,14 +11,12 @@ Communication getModel() {
 
 Communication c = getModel();
 
-
 class FypScreen extends StatelessWidget {
   const FypScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
