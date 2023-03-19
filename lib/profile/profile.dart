@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:youphoria/services/auth.dart';
-import 'package:youphoria/shared/bottom_nav.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -8,10 +7,12 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xFF0c1421),
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: const Text("Profile"),
       ),
-      bottomNavigationBar: const BottomNavBar(),
+     
       body: ElevatedButton(
         child: const Text("Sign out"),
         onPressed: () async {
