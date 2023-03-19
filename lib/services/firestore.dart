@@ -7,6 +7,26 @@ import 'package:youphoria/services/models.dart';
 class FirestoreService {
   final FirebaseFirestore _db = FirebaseFirestore.instance;
 
+  Future<Map<String, dynamic>?> getTopic(String title) async {
+    try {
+      final docRef = _db.collection('topics').doc(title);
+      final doc = await docRef.get();
+      final data = doc.data() as Map<String, dynamic>;
+      print("I'm here! ${data['title']}");
+      return data;
+    } catch (e) {
+      print("Error getting document: $e");
+      return null;
+    }
+  }
+}
+
+
+
+
+
+
+// Archive / trash
   // Future<List<Topic>> getTopics() async {
   //   var ref = _db.collection('topics');
   //   var snapshot = await ref.get();
@@ -33,17 +53,3 @@ class FirestoreService {
   //     onError: (e) => print("Error getting document: $e"),
   //   );
   // }
-
-  Future<Map<String, dynamic>?> getTopic(String title) async {
-    try {
-      final docRef = _db.collection('topics').doc(title);
-      final doc = await docRef.get();
-      final data = doc.data() as Map<String, dynamic>;
-      print("I'm here! ${data['title']}");
-      return data;
-    } catch (e) {
-      print("Error getting document: $e");
-      return null;
-    }
-  }
-}
