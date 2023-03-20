@@ -24,14 +24,14 @@ class LoginScreen extends StatelessWidget {
             ),
             Flexible(
               child: LoginButton(
-                color: const Color(0xFF9F65EE),
+                // color: const Color(0xFF9F65EE),
                 icon: FontAwesomeIcons.userAstronaut,
                 text: 'Continue as guest',
                 loginMethod: AuthService().anonLogin,
               ),
             ),
             LoginButton(
-              color: Colors.blue,
+              // color: Colors.blue,
               icon: FontAwesomeIcons.userAstronaut,
               text: 'Sign in with Google',
               loginMethod: AuthService().googleLogin,
@@ -44,14 +44,14 @@ class LoginScreen extends StatelessWidget {
 }
 
 class LoginButton extends StatelessWidget {
-  final Color color;
+  // final Color color;
   final IconData icon;
   final String text;
   final Function loginMethod;
 
   const LoginButton({
     super.key,
-    required this.color,
+    // required this.color,
     required this.icon,
     required this.text,
     required this.loginMethod,
@@ -68,7 +68,7 @@ class LoginButton extends StatelessWidget {
         ),
         style: TextButton.styleFrom(
           padding: const EdgeInsets.all(24),
-          backgroundColor: color,
+          // backgroundColor: color,
         ),
         // onPressed: () => loginMethod(),
         onPressed: () async {

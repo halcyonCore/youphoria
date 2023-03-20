@@ -3,7 +3,6 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:youphoria/explore/explore.dart';
 import 'package:youphoria/login/login.dart';
 import 'package:youphoria/theme.dart';
-// import 'firebase_options.dart';
 import 'package:youphoria/routes.dart';
 
 void main() {
@@ -35,11 +34,12 @@ class _AppState extends State<App> {
 
         // Once complete, show your application
         if (snapshot.connectionState == ConnectionState.done) {
+          final theme = YouphoriaTheme();
           return MaterialApp(
             title: 'Youphoria',
             home: const LoginScreen(),
             routes: appRoutes,
-            theme: appTheme,
+            theme: theme.toThemeData(),
           );
         }
 

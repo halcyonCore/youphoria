@@ -26,6 +26,7 @@ dependencies:
   # provider: 6.0.3
   rxdart: 0.27.4
   json_annotation: ^4.5.0
+  animations: ^2.0.7
 
 dev_dependencies:
   flutter_test:
@@ -47,6 +48,15 @@ flutter:
     - assets/images/gradient-placeholder.png
     - assets/images/topic-communication.png
     - assets/images/topic-banner.png
+    - assets/images/communication.png
+    - assets/images/gender.png
+    - assets/images/sexual-orientation.png
+    - assets/images/hotlines.png
+    - assets/images/contraception.png
+    - assets/images/consent.png
+    - assets/images/sti.png
+    - assets/images/puberty.png
+    - assets/images/other-resources.png
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - assets/
