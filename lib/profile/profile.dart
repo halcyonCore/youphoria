@@ -9,25 +9,26 @@ class ProfileScreen extends StatelessWidget {
     return Scaffold(
       // backgroundColor: const Color(0xFF0c1421),
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.primaryContainer,
+        backgroundColor: Theme.of(context).colorScheme.tertiaryContainer,
         automaticallyImplyLeading: false,
         title: const Text("Profile"),
       ),
       body: Container(
+        decoration: BoxDecoration(
+          color: Theme.of(context).colorScheme.primaryContainer,
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              Theme.of(context).colorScheme.tertiaryContainer,
+              Theme.of(context).colorScheme.secondaryContainer,
+              Theme.of(context).colorScheme.secondaryContainer,
+            ],
+          ),
+        ),
         child: Column(
           children: [
             Container(
-              decoration: BoxDecoration(
-                color: Theme.of(context).colorScheme.primaryContainer,
-                gradient: LinearGradient(
-                  begin: Alignment.bottomCenter,
-                  end: Alignment.topCenter,
-                  colors: [
-                    Theme.of(context).colorScheme.background,
-                    Theme.of(context).colorScheme.primaryContainer,
-                  ],
-                ),
-              ),
               height: 200,
               padding: const EdgeInsets.all(20),
               child: Center(

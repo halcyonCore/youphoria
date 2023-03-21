@@ -17,38 +17,50 @@ class _NavigationState extends State<Navigation> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: NavigationBar(
-        // backgroundColor: const Color(0xFF0c1421),
-        // surfaceTintColor: const Color(0xFF000000),
-        onDestinationSelected: (int index) {
-          setState(() {
-            currentPageIndex = index;
-          });
-        },
-        selectedIndex: currentPageIndex,
-        destinations: const <Widget>[
-          NavigationDestination(
-            icon: Icon(
-              FontAwesomeIcons.house,
-              size: 20,
-            ),
-            label: 'Explore',
+      extendBody: true,
+      // backgroundColor: Theme.of(context).colorScheme.secondaryContainer,
+      bottomNavigationBar: Container(
+        clipBehavior: Clip.antiAlias,
+        decoration: const BoxDecoration(
+          borderRadius: BorderRadius.only(
+            topRight: Radius.circular(40),
+            topLeft: Radius.circular(40),
           ),
-          NavigationDestination(
-            icon: Icon(
-              FontAwesomeIcons.magnifyingGlass,
-              size: 20,
+        ),
+        child: NavigationBar(
+          backgroundColor: Theme.of(context).colorScheme.secondaryContainer,
+          shadowColor: Theme.of(context).colorScheme.tertiaryContainer,
+          surfaceTintColor: Theme.of(context).colorScheme.onBackground,
+          onDestinationSelected: (int index) {
+            setState(() {
+              currentPageIndex = index;
+            });
+          },
+          selectedIndex: currentPageIndex,
+          destinations: const <Widget>[
+            NavigationDestination(
+              icon: Icon(
+                FontAwesomeIcons.house,
+                size: 20,
+              ),
+              label: 'Explore',
             ),
-            label: 'Search',
-          ),
-          NavigationDestination(
-            icon: Icon(
-              FontAwesomeIcons.user,
-              size: 20,
+            NavigationDestination(
+              icon: Icon(
+                FontAwesomeIcons.magnifyingGlass,
+                size: 20,
+              ),
+              label: 'Search',
             ),
-            label: 'Profile',
-          ),
-        ],
+            NavigationDestination(
+              icon: Icon(
+                FontAwesomeIcons.user,
+                size: 20,
+              ),
+              label: 'Profile',
+            ),
+          ],
+        ),
       ),
       body: const <Widget>[
         ExploreScreen(),

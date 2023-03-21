@@ -5,34 +5,34 @@ const lightColorScheme = ColorScheme(
   brightness: Brightness.light,
   primary: Color(0xFF00687A),
   onPrimary: Color(0xFFFFFFFF),
-  primaryContainer: Color(0xFFADECFF),
+  primaryContainer: Color(0xFF94ddff), // original: 0xFFADECFF
   onPrimaryContainer: Color(0xFF001F26),
   secondary: Color(0xFF5E52A7),
   onSecondary: Color(0xFFFFFFFF),
-  secondaryContainer: Color(0xFFE5DEFF),
+  secondaryContainer: Color(0xFFd1c5ff), // original: 0xFFE5DEFF
   onSecondaryContainer: Color(0xFF1A0261),
   tertiary: Color(0xFFBE0A1E),
   onTertiary: Color(0xFFFFFFFF),
-  tertiaryContainer: Color(0xFFFFDAD7),
+  tertiaryContainer: Color(0xFFffc2be), // original: 0xFFFFDAD7
   onTertiaryContainer: Color(0xFF410004),
   error: Color(0xFFBA1A1A),
-  errorContainer: Color(0xFFFFDAD6),
+  errorContainer: Color(0xFFFFB0C8), // modified
   onError: Color(0xFFFFFFFF),
   onErrorContainer: Color(0xFF410002),
   background: Color(0xFFFFFBFF),
   onBackground: Color(0xFF2B0052),
   surface: Color(0xFFFFFBFF),
-  onSurface: Color(0xFF2B0052),
+  onSurface: Color(0xFF5E52A7),
   surfaceVariant: Color(0xFFDBE4E7),
   onSurfaceVariant: Color(0xFF3F484B),
-  outline: Color(0xFF70797C),
+  outline: Color(0xFF2B0052),
   onInverseSurface: Color(0xFFF9ECFF),
   inverseSurface: Color(0xFF421A6C),
   inversePrimary: Color(0xFF56D6F5),
   shadow: Color(0xFF000000),
   surfaceTint: Color(0xFF00687A),
   outlineVariant: Color(0xFFBFC8CB),
-  scrim: Color(0xFF000000),
+  scrim: Color(0xFFb3d1ff), // modified
 );
 
 const darkColorScheme = ColorScheme(

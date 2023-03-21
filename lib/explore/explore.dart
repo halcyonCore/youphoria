@@ -52,19 +52,21 @@ class ExploreScreen extends StatelessWidget {
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
       ),
-      body: SingleChildScrollView(
-        child: Container(
-          // decoration: BoxDecoration(
-          //   color: Theme.of(context).colorScheme.primary,
-          //   gradient: LinearGradient(
-          //     begin: Alignment.bottomCenter,
-          //     end: Alignment.topCenter,
-          //     colors: [
-          //       Theme.of(context).colorScheme.background,
-          //       Theme.of(context).colorScheme.primary,
-          //     ],
-          //   ),
-          // ),
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              // Theme.of(context).colorScheme.primaryContainer,
+              // Theme.of(context).colorScheme.secondaryContainer,
+              Theme.of(context).colorScheme.primaryContainer,
+              Theme.of(context).colorScheme.secondaryContainer,
+              Theme.of(context).colorScheme.secondaryContainer,
+            ],
+          ),
+        ),
+        child: SingleChildScrollView(
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -98,13 +100,13 @@ class ExploreScreen extends StatelessWidget {
                           borderRadius: BorderRadius.circular(18.0),
                         ),
                         height: 200,
-                        child: FilledButton.tonal(
+                        child: OutlinedButton(
                           onPressed: () {
                             Navigator.pushNamed(context, '/fyp');
                           },
-                          style: FilledButton.styleFrom(
-                            backgroundColor:
-                                Theme.of(context).colorScheme.primaryContainer,
+                          style: OutlinedButton.styleFrom(
+                            // backgroundColor:
+                            //     Theme.of(context).colorScheme.primaryContainer,
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(18.0),
                             ),
@@ -146,29 +148,28 @@ class ExploreScreen extends StatelessWidget {
                     dummyTopics.length,
                     (index) {
                       final topic = dummyTopics[index];
-                      final image =
-                          dummyTopics[index].img ?? 'assets/images/tile.png';
+                      final image = dummyTopics[index].img;
 
                       return Container(
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(4.0),
                         ),
                         margin: const EdgeInsets.all(8),
-                        child: FilledButton.tonal(
+                        child: OutlinedButton(
                           clipBehavior: Clip.antiAlias, // <--add this
 
                           onPressed: () {
                             Navigator.pushNamed(context, '/communication');
                           },
-                          style: FilledButton.styleFrom(
+                          style: OutlinedButton.styleFrom(
                             padding: EdgeInsets.zero, // <--add this
 
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(20.0),
                             ),
-                            backgroundColor: Theme.of(context)
-                                .colorScheme
-                                .secondaryContainer,
+                            // backgroundColor: Theme.of(context)
+                            //     .colorScheme
+                            //     .secondaryContainer,
                             // .withOpacity(.3),
                           ),
                           child: Container(
@@ -190,7 +191,10 @@ class ExploreScreen extends StatelessWidget {
                                   textAlign: TextAlign.left,
                                   style: TextStyle(
                                     fontSize: 17.0,
-                                    fontWeight: FontWeight.bold,
+                                    color: Theme.of(context)
+                                        .colorScheme
+                                        .onBackground,
+                                    // fontWeight: FontWeight.bold,
                                   ),
                                 ),
                               ),
@@ -206,6 +210,7 @@ class ExploreScreen extends StatelessWidget {
           ),
         ),
       ),
+
       // bottomNavigationBar: BottomNavigationBar(),
     );
   }
