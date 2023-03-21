@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:youphoria/services/auth.dart';
+import 'package:rive/rive.dart';
+import 'dart:ui';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -8,36 +10,87 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        padding: const EdgeInsets.all(30),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            const Text(
-              'YOUphoria',
-              style: TextStyle(
-                fontSize: 40,
-                fontWeight: FontWeight.bold,
-              ),
-              textAlign: TextAlign.center,
+      body: Stack(
+        children: [
+          const RiveAnimation.asset(
+            'assets/animations/shapes4.riv',
+          ),
+          Positioned.fill(
+            child: BackdropFilter(
+              filter: ImageFilter.blur(sigmaX: 40, sigmaY: 40),
+              child: const SizedBox(),
             ),
-            Flexible(
-              child: LoginButton(
-                // color: const Color(0xFF9F65EE),
-                icon: FontAwesomeIcons.userAstronaut,
-                text: 'Continue as guest',
-                loginMethod: AuthService().anonLogin,
-              ),
+          ),
+          Container(
+            padding: const EdgeInsets.all(30),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                SizedBox(
+                  height: 80,
+                ),
+                Container(
+                  // decoration: BoxDecoration(
+                  //   borderRadius: BorderRadius.circular(1),
+                  //   image: DecorationImage(
+                  //     image: AssetImage("assets/images/youphoria2.png"),
+                  //     fit: BoxFit.fitWidth,
+                  //   ),
+                  // ),
+                  padding: const EdgeInsets.only(top: 200, bottom: 150),
+                  child: Column(
+                    children: [
+                      Text(
+                        'YOUphoria',
+                        style: TextStyle(
+                          fontSize: 50,
+                          fontWeight: FontWeight.bold,
+                          color: Theme.of(context).colorScheme.onBackground,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                      Text(
+                        'Feel confident in your sexuality',
+                        style: TextStyle(
+                          fontSize: 15,
+                          color: Theme.of(context).colorScheme.onBackground,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ],
+                  ),
+                ),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      LoginButton(
+                        icon: FontAwesomeIcons.user,
+                        text: 'Continue as guest',
+                        loginMethod: AuthService().anonLogin,
+                      ),
+                      LoginButton(
+                        icon: FontAwesomeIcons.google,
+                        text: 'Sign in with Google',
+                        loginMethod: AuthService().googleLogin,
+                      ),
+                      LoginButton(
+                        icon: FontAwesomeIcons.apple,
+                        text: 'Sign in with Apple (not complete)',
+                        loginMethod: AuthService().googleLogin,
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  height: 100,
+                )
+              ],
             ),
-            LoginButton(
-              // color: Colors.blue,
-              icon: FontAwesomeIcons.userAstronaut,
-              text: 'Sign in with Google',
-              loginMethod: AuthService().googleLogin,
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
@@ -60,22 +113,24 @@ class LoginButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: double.infinity,
       margin: const EdgeInsets.only(bottom: 10),
-      child: ElevatedButton.icon(
+      child: OutlinedButton.icon(
         icon: Icon(
           icon,
           size: 20,
+          color: Theme.of(context).colorScheme.onBackground,
         ),
-        style: TextButton.styleFrom(
+        style: OutlinedButton.styleFrom(
           padding: const EdgeInsets.all(24),
-          // backgroundColor: color,
+          side: BorderSide(
+            color: Theme.of(context).colorScheme.onBackground,
+          ),
         ),
-        // onPressed: () => loginMethod(),
         onPressed: () async {
           bool isLoggedIn = await loginMethod();
           if (isLoggedIn) {
-            Navigator.pushReplacementNamed(context,
-                '/home'); // Replace '/home' with the route name of the home screen.
+            Navigator.pushReplacementNamed(context, '/home');
           } else {
             ScaffoldMessenger.of(context).showSnackBar(
               const SnackBar(
@@ -83,10 +138,13 @@ class LoginButton extends StatelessWidget {
             );
           }
         },
-
         label: Text(
           text,
           textAlign: TextAlign.center,
+          style: TextStyle(
+            fontSize: 15,
+            color: Theme.of(context).colorScheme.onBackground,
+          ),
         ),
       ),
     );

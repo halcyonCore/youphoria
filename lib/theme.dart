@@ -76,6 +76,7 @@ class YouphoriaTheme {
       useMaterial3: true,
       brightness: Brightness.light,
       colorScheme: lightColorScheme,
+      fontFamily: GoogleFonts.comfortaa().fontFamily,
     );
   }
 }
