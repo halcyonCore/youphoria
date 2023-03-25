@@ -40,8 +40,7 @@ class _NavigationState extends State<Navigation> {
           shadowColor: Theme.of(context).colorScheme.inverseSurface,
           elevation: 5,
           height: 60,
-          surfaceTintColor:
-              Theme.of(context).colorScheme.onBackground.withOpacity(0),
+          surfaceTintColor: Theme.of(context).colorScheme.inverseSurface,
           onDestinationSelected: (int index) {
             setState(() {
               currentPageIndex = index;

@@ -59,11 +59,13 @@ class ExploreScreen extends StatelessWidget {
             ),
           ),
         ),
-        // backgroundColor: Theme.of(context).colorScheme.secondaryContainer,
-        automaticallyImplyLeading: true,
-        title: const Text(
+        automaticallyImplyLeading: false,
+        title: Text(
           'Explore',
-          style: TextStyle(fontWeight: FontWeight.bold),
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            color: Theme.of(context).colorScheme.onBackground,
+          ),
         ),
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
@@ -72,48 +74,10 @@ class ExploreScreen extends StatelessWidget {
         ),
       ),
       body: Container(
-        // decoration: BoxDecoration(
-        // gradient: LinearGradient(
-        //   begin: Alignment.topCenter,
-        //   end: Alignment.bottomCenter,
-        //   colors: [
-        //     // Theme.of(context).colorScheme.secondaryContainer,
-        //     Theme.of(context).colorScheme.primaryContainer,
-        //   ],
-        // ),
-        // ),
         child: SingleChildScrollView(
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              // Browse all text
-              // Container(
-              //   decoration: BoxDecoration(
-              //     color: Theme.of(context).colorScheme.secondaryContainer,
-              //   ),
-              //   child: Container(
-              //     decoration: BoxDecoration(
-              //       color: Theme.of(context).colorScheme.background,
-              //       borderRadius: BorderRadius.only(
-              //         topLeft: Radius.circular(40),
-              //       ),
-              //     ),
-              //     padding: const EdgeInsets.only(top: 15, bottom: 4, left: 20),
-              //     child: Container(
-              //       alignment: Alignment.topLeft,
-              //       child: const Text(
-              //         "Browse all",
-              //         textAlign: TextAlign.left,
-              //         style: TextStyle(
-              //           fontSize: 20,
-              //           fontWeight: FontWeight.bold,
-              //         ),
-              //       ),
-              //     ),
-              //   ),
-              // ),
-
-              // Container for grid of topics
               Container(
                 decoration: BoxDecoration(
                   color: Theme.of(context).colorScheme.primaryContainer,
@@ -136,7 +100,6 @@ class ExploreScreen extends StatelessWidget {
                       (index) {
                         final topic = dummyTopics[index];
                         final image = dummyTopics[index].img;
-
                         return Container(
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(4.0),
@@ -160,10 +123,6 @@ class ExploreScreen extends StatelessWidget {
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(20.0),
                               ),
-                              // backgroundColor: Theme.of(context)
-                              //     .colorScheme
-                              //     .secondaryContainer,
-                              // .withOpacity(.3),
                             ),
                             child: Container(
                               decoration: BoxDecoration(
@@ -191,7 +150,6 @@ class ExploreScreen extends StatelessWidget {
                                       color: Theme.of(context)
                                           .colorScheme
                                           .onBackground,
-                                      // fontWeight: FontWeight.bold,
                                     ),
                                   ),
                                 ),

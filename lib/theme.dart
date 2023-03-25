@@ -22,9 +22,9 @@ const lightColorScheme = ColorScheme(
   background: Color(0xFFFFFBFF), // leave as is
   onBackground: Color(0xFF2B0052),
   surface: Color(0xFFFFFBFF),
-  onSurface: Color(0xFF5E52A7),
+  onSurface: Color.fromARGB(255, 156, 232, 255),
   surfaceVariant: Color(0xFFDBE4E7),
-  onSurfaceVariant: Color.fromARGB(255, 55, 119, 141),
+  onSurfaceVariant: Color.fromARGB(255, 105, 152, 167),
   outline: Color(0xFF094074),
   onInverseSurface: Color(0xFFF9ECFF),
   inverseSurface: Color(0xFF094074), // modified
