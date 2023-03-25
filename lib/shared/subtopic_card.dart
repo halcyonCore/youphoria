@@ -28,17 +28,18 @@ class _SubtopicCardState extends State<SubtopicCard> {
       padding: const EdgeInsets.only(top: 20),
       child: Container(
         decoration: BoxDecoration(
-          color: Theme.of(context).colorScheme.secondaryContainer,
-          borderRadius: BorderRadius.circular(20),
+          color:
+              Theme.of(context).colorScheme.secondaryContainer.withOpacity(0.5),
+          borderRadius: BorderRadius.circular(35),
         ),
         child: Padding(
           padding:
-              const EdgeInsets.only(top: 18, bottom: 6, left: 15, right: 15),
+              const EdgeInsets.only(top: 30, bottom: 6, left: 20, right: 20),
           child: Column(
             children: [
               Container(
                 alignment: Alignment.topLeft,
-                padding: EdgeInsets.only(bottom: 8),
+                padding: EdgeInsets.only(bottom: 6),
                 child: Text(
                   widget.title,
                   textAlign: TextAlign.left,
@@ -58,7 +59,6 @@ class _SubtopicCardState extends State<SubtopicCard> {
               ),
               Container(
                 decoration: BoxDecoration(
-                  color: Theme.of(context).colorScheme.secondaryContainer,
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: Row(

@@ -5,8 +5,6 @@ import 'package:youphoria/login/login.dart';
 import 'package:youphoria/search/search.dart';
 import 'package:youphoria/profile/profile.dart';
 import 'package:youphoria/home/home.dart';
-import 'package:flutter/material.dart';
-import 'package:youphoria/shared/navigation.dart';
 
 var appRoutes = {
   '/login': (context) => const LoginScreen(),

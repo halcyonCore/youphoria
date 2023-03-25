@@ -44,165 +44,163 @@ class ExploreScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.primaryContainer,
-        automaticallyImplyLeading: false,
-        // backgroundColor: const Color(0xFF0c1421),
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            borderRadius: const BorderRadius.only(
+              bottomRight: Radius.circular(40),
+            ),
+            gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [
+                Theme.of(context).colorScheme.primaryContainer,
+                Theme.of(context).colorScheme.secondaryContainer
+              ],
+            ),
+          ),
+        ),
+        // backgroundColor: Theme.of(context).colorScheme.secondaryContainer,
+        automaticallyImplyLeading: true,
         title: const Text(
           'Explore',
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
-      ),
-      body: Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [
-              // Theme.of(context).colorScheme.primaryContainer,
-              // Theme.of(context).colorScheme.secondaryContainer,
-              Theme.of(context).colorScheme.primaryContainer,
-              Theme.of(context).colorScheme.secondaryContainer,
-              Theme.of(context).colorScheme.secondaryContainer,
-            ],
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+            bottomRight: Radius.circular(40),
           ),
         ),
+      ),
+      body: Container(
+        // decoration: BoxDecoration(
+        // gradient: LinearGradient(
+        //   begin: Alignment.topCenter,
+        //   end: Alignment.bottomCenter,
+        //   colors: [
+        //     // Theme.of(context).colorScheme.secondaryContainer,
+        //     Theme.of(context).colorScheme.primaryContainer,
+        //   ],
+        // ),
+        // ),
         child: SingleChildScrollView(
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              // For You Page Text
-              Flexible(
-                child: Padding(
-                  padding:
-                      const EdgeInsets.only(top: 10.0, right: 8.0, left: 11.0),
-                  child: Container(
-                    alignment: Alignment.topLeft,
-                    child: const Text(
-                      "For You Page",
-                      textAlign: TextAlign.left,
-                      style: TextStyle(
-                        fontSize: 17.0,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              // Container for button
-              Flexible(
-                child: Padding(
-                  padding:
-                      const EdgeInsets.only(top: 10.0, right: 12.0, left: 12.0),
-                  child: Column(
-                    children: [
-                      Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(18.0),
-                        ),
-                        height: 200,
-                        child: OutlinedButton(
-                          onPressed: () {
-                            Navigator.pushNamed(context, '/fyp');
-                          },
-                          style: OutlinedButton.styleFrom(
-                            // backgroundColor:
-                            //     Theme.of(context).colorScheme.primaryContainer,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(18.0),
-                            ),
-                          ),
-                          child: Container(),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
               // Browse all text
-              Flexible(
-                child: Padding(
-                  padding:
-                      const EdgeInsets.only(top: 10.0, right: 8.0, left: 11.0),
-                  child: Container(
-                    alignment: Alignment.topLeft,
-                    child: const Text(
-                      "Browse all",
-                      textAlign: TextAlign.left,
-                      style: TextStyle(
-                        fontSize: 17.0,
-                        fontWeight: FontWeight.bold,
-                      ),
+              // Container(
+              //   decoration: BoxDecoration(
+              //     color: Theme.of(context).colorScheme.secondaryContainer,
+              //   ),
+              //   child: Container(
+              //     decoration: BoxDecoration(
+              //       color: Theme.of(context).colorScheme.background,
+              //       borderRadius: BorderRadius.only(
+              //         topLeft: Radius.circular(40),
+              //       ),
+              //     ),
+              //     padding: const EdgeInsets.only(top: 15, bottom: 4, left: 20),
+              //     child: Container(
+              //       alignment: Alignment.topLeft,
+              //       child: const Text(
+              //         "Browse all",
+              //         textAlign: TextAlign.left,
+              //         style: TextStyle(
+              //           fontSize: 20,
+              //           fontWeight: FontWeight.bold,
+              //         ),
+              //       ),
+              //     ),
+              //   ),
+              // ),
+
+              // Container for grid of topics
+              Container(
+                decoration: BoxDecoration(
+                  color: Theme.of(context).colorScheme.primaryContainer,
+                ),
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Theme.of(context).colorScheme.background,
+                    borderRadius: const BorderRadius.only(
+                      topLeft: Radius.circular(40),
                     ),
                   ),
-                ),
-              ),
-              // Container for grid of topics
-              Padding(
-                padding: const EdgeInsets.all(4.0),
-                child: GridView.count(
-                  physics: const NeverScrollableScrollPhysics(),
-                  shrinkWrap: true,
-                  crossAxisCount: 2,
-                  childAspectRatio: 1.6,
-                  children: List.generate(
-                    dummyTopics.length,
-                    (index) {
-                      final topic = dummyTopics[index];
-                      final image = dummyTopics[index].img;
+                  padding: const EdgeInsets.only(top: 20, right: 11, left: 11),
+                  child: GridView.count(
+                    physics: const NeverScrollableScrollPhysics(),
+                    shrinkWrap: true,
+                    crossAxisCount: 2,
+                    childAspectRatio: 1.6,
+                    children: List.generate(
+                      dummyTopics.length,
+                      (index) {
+                        final topic = dummyTopics[index];
+                        final image = dummyTopics[index].img;
 
-                      return Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(4.0),
-                        ),
-                        margin: const EdgeInsets.all(8),
-                        child: OutlinedButton(
-                          clipBehavior: Clip.antiAlias, // <--add this
-
-                          onPressed: () {
-                            Navigator.pushNamed(context, '/communication');
-                          },
-                          style: OutlinedButton.styleFrom(
-                            padding: EdgeInsets.zero, // <--add this
-
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(20.0),
-                            ),
-                            // backgroundColor: Theme.of(context)
-                            //     .colorScheme
-                            //     .secondaryContainer,
-                            // .withOpacity(.3),
+                        return Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(4.0),
                           ),
-                          child: Container(
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(1),
-                              image: DecorationImage(
-                                image: AssetImage(image),
-                                fit: BoxFit.cover,
+                          margin: const EdgeInsets.all(8),
+                          child: OutlinedButton(
+                            clipBehavior: Clip.antiAlias, // <--add this
+
+                            onPressed: () {
+                              Navigator.pushNamed(context, '/communication');
+                            },
+                            style: OutlinedButton.styleFrom(
+                              padding: EdgeInsets.zero, // <--add this
+                              side: BorderSide(
+                                color: Theme.of(context)
+                                    .colorScheme
+                                    .inverseSurface
+                                    .withOpacity(.5),
+                                width: 1,
                               ),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20.0),
+                              ),
+                              // backgroundColor: Theme.of(context)
+                              //     .colorScheme
+                              //     .secondaryContainer,
+                              // .withOpacity(.3),
                             ),
-                            alignment: Alignment.topLeft,
-                            child: Padding(
-                              padding: EdgeInsets.only(
-                                  top: 12.0, right: 8.0, left: 2.0),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                color: Theme.of(context)
+                                    .colorScheme
+                                    .primaryContainer
+                                    .withOpacity(.5),
+                                borderRadius: BorderRadius.circular(1),
+                                image: DecorationImage(
+                                  image: AssetImage(image),
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                              alignment: Alignment.topLeft,
                               child: Padding(
-                                padding: EdgeInsets.only(left: 12),
-                                child: Text(
-                                  topic.name,
-                                  textAlign: TextAlign.left,
-                                  style: TextStyle(
-                                    fontSize: 17.0,
-                                    color: Theme.of(context)
-                                        .colorScheme
-                                        .onBackground,
-                                    // fontWeight: FontWeight.bold,
+                                padding: const EdgeInsets.only(
+                                    top: 12.0, right: 8.0, left: 2.0),
+                                child: Padding(
+                                  padding: const EdgeInsets.only(left: 12),
+                                  child: Text(
+                                    topic.name,
+                                    textAlign: TextAlign.left,
+                                    style: TextStyle(
+                                      fontSize: 16.0,
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .onBackground,
+                                      // fontWeight: FontWeight.bold,
+                                    ),
                                   ),
                                 ),
                               ),
                             ),
                           ),
-                        ),
-                      );
-                    },
+                        );
+                      },
+                    ),
                   ),
                 ),
               ),
@@ -210,8 +208,6 @@ class ExploreScreen extends StatelessWidget {
           ),
         ),
       ),
-
-      // bottomNavigationBar: BottomNavigationBar(),
     );
   }
 }

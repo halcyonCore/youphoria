@@ -18,46 +18,66 @@ class _NavigationState extends State<Navigation> {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBody: true,
-      // backgroundColor: Theme.of(context).colorScheme.secondaryContainer,
       bottomNavigationBar: Container(
+        margin: EdgeInsets.only(bottom: 40, top: 15, right: 15, left: 15),
+        // padding: EdgeInsets.only(bottom: 10, top: 10, right: 10, left: 10),
         clipBehavior: Clip.antiAlias,
-        decoration: const BoxDecoration(
-          borderRadius: BorderRadius.only(
-            topRight: Radius.circular(40),
-            topLeft: Radius.circular(40),
+        decoration: BoxDecoration(
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.2),
+              spreadRadius: 4,
+              blurRadius: 10,
+              offset: Offset(0, 3), // changes x,y position of shadow
+            ),
+          ],
+          borderRadius: BorderRadius.all(
+            Radius.circular(50),
           ),
         ),
         child: NavigationBar(
-          backgroundColor: Theme.of(context).colorScheme.secondaryContainer,
-          shadowColor: Theme.of(context).colorScheme.tertiaryContainer,
-          surfaceTintColor: Theme.of(context).colorScheme.onBackground,
+          backgroundColor: Theme.of(context).colorScheme.inverseSurface,
+          shadowColor: Theme.of(context).colorScheme.inverseSurface,
+          elevation: 5,
+          height: 60,
+          surfaceTintColor:
+              Theme.of(context).colorScheme.onBackground.withOpacity(0),
           onDestinationSelected: (int index) {
             setState(() {
               currentPageIndex = index;
             });
           },
           selectedIndex: currentPageIndex,
-          destinations: const <Widget>[
-            NavigationDestination(
-              icon: Icon(
-                FontAwesomeIcons.house,
-                size: 20,
+          destinations: <Widget>[
+            Container(
+              padding: const EdgeInsets.only(top: 35),
+              child: const NavigationDestination(
+                icon: Icon(
+                  FontAwesomeIcons.house,
+                  size: 20,
+                ),
+                label: 'Explore',
               ),
-              label: 'Explore',
             ),
-            NavigationDestination(
-              icon: Icon(
-                FontAwesomeIcons.magnifyingGlass,
-                size: 20,
+            Container(
+              padding: const EdgeInsets.only(top: 35),
+              child: const NavigationDestination(
+                icon: Icon(
+                  FontAwesomeIcons.magnifyingGlass,
+                  size: 20,
+                ),
+                label: 'Search',
               ),
-              label: 'Search',
             ),
-            NavigationDestination(
-              icon: Icon(
-                FontAwesomeIcons.user,
-                size: 20,
+            Container(
+              padding: const EdgeInsets.only(top: 35),
+              child: const NavigationDestination(
+                icon: Icon(
+                  FontAwesomeIcons.user,
+                  size: 20,
+                ),
+                label: 'Profile',
               ),
-              label: 'Profile',
             ),
           ],
         ),

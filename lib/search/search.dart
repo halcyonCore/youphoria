@@ -9,7 +9,7 @@ class SearchScreen extends StatelessWidget {
       // backgroundColor: const Color(0xFF0c1421),
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        backgroundColor: Theme.of(context).colorScheme.errorContainer,
+        backgroundColor: Theme.of(context).colorScheme.secondaryContainer,
         title: const Text(
           'Search',
           style: TextStyle(fontWeight: FontWeight.bold),
@@ -23,9 +23,9 @@ class SearchScreen extends StatelessWidget {
             colors: [
               // Theme.of(context).colorScheme.primaryContainer,
               // Theme.of(context).colorScheme.secondaryContainer,
-              Theme.of(context).colorScheme.errorContainer,
               Theme.of(context).colorScheme.secondaryContainer,
-              Theme.of(context).colorScheme.secondaryContainer,
+              Theme.of(context).colorScheme.tertiaryContainer,
+              Theme.of(context).colorScheme.tertiaryContainer,
             ],
           ),
         ),

@@ -3,31 +3,31 @@ import 'package:google_fonts/google_fonts.dart';
 
 const lightColorScheme = ColorScheme(
   brightness: Brightness.light,
-  primary: Color(0xFF00687A),
+  primary: Color(0xFF7AE1FF),
   onPrimary: Color(0xFFFFFFFF),
-  primaryContainer: Color(0xFF94ddff), // original: 0xFFADECFF
-  onPrimaryContainer: Color(0xFF001F26),
-  secondary: Color(0xFF5E52A7),
-  onSecondary: Color(0xFFFFFFFF),
-  secondaryContainer: Color(0xFFd1c5ff), // original: 0xFFE5DEFF
+  primaryContainer: Color(0xFF9EE4FA), // original: 0xFFADECFF
+  onPrimaryContainer: Color(0xFF003A4B),
+  secondary: Color(0xFFAD97FF),
+  onSecondary: Color(0xFF120052),
+  secondaryContainer: Color(0xFFB9A8F5), // original: 0xFFE5DEFF
   onSecondaryContainer: Color(0xFF1A0261),
-  tertiary: Color(0xFFBE0A1E),
-  onTertiary: Color(0xFFFFFFFF),
-  tertiaryContainer: Color(0xFFffc2be), // original: 0xFFFFDAD7
+  tertiary: Color(0xFFFFAF99),
+  onTertiary: Color(0xFF521200),
+  tertiaryContainer: Color(0xFFF9D3C8), // original: 0xFFFFDAD7
   onTertiaryContainer: Color(0xFF410004),
   error: Color(0xFFBA1A1A),
   errorContainer: Color(0xFFFFB0C8), // modified
   onError: Color(0xFFFFFFFF),
   onErrorContainer: Color(0xFF410002),
-  background: Color(0xFFFFFBFF),
+  background: Color(0xFFFFFBFF), // leave as is
   onBackground: Color(0xFF2B0052),
   surface: Color(0xFFFFFBFF),
   onSurface: Color(0xFF5E52A7),
   surfaceVariant: Color(0xFFDBE4E7),
-  onSurfaceVariant: Color(0xFF3F484B),
-  outline: Color(0xFF2B0052),
+  onSurfaceVariant: Color.fromARGB(255, 55, 119, 141),
+  outline: Color(0xFF094074),
   onInverseSurface: Color(0xFFF9ECFF),
-  inverseSurface: Color(0xFF421A6C),
+  inverseSurface: Color(0xFF094074), // modified
   inversePrimary: Color(0xFF56D6F5),
   shadow: Color(0xFF000000),
   surfaceTint: Color(0xFF00687A),
