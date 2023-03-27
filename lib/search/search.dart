@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:youphoria/search/google_maps.dart';
+// import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class SearchScreen extends StatelessWidget {
   const SearchScreen({super.key});
@@ -15,6 +17,7 @@ class SearchScreen extends StatelessWidget {
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
       ),
+
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
@@ -29,6 +32,7 @@ class SearchScreen extends StatelessWidget {
             ],
           ),
         ),
+        child: GoogleMapsScreen(),
       ),
     );
   }
