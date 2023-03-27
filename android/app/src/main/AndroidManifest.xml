@@ -4,6 +4,10 @@
         android:label="youphoria"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
+        <meta-data android:name="com.google.android.geo.API_KEY"
+               android:value="AIzaSyBIYciFp8vHifa_2r0FV22IZEfNWK_YSIg"/>
+
+
         <activity
             android:name=".MainActivity"
             android:exported="true"
