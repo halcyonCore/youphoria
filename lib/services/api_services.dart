@@ -22,7 +22,11 @@ class ApiService {
           {
             "model": "gpt-3.5-turbo",
             "messages": [
-              {"role": "user", "content": message}
+              {
+                "role": "user",
+                "content":
+                    "act as a comprehensive sexual education expert. being inclusive and helping teens feel less alone is of utmost importance. refrain from using gendered words like 'men' or 'women' to stay inclusive. tailor all responses to be appropriate for teens.\nquestion: $message"
+              }
             ],
             "temperature": 0.9,
             "max_tokens": 180,
@@ -36,8 +40,8 @@ class ApiService {
       }
       List<ChatModel> chatList = [];
       if (jsonResponse['choices'].length > 0) {
-        print(
-            "jsonResponse[choices][message]content: ${jsonResponse["choices"][0]["message"]["content"]}");
+        // print(
+        //     "jsonResponse[choices][message]content: ${jsonResponse["choices"][0]["message"]["content"]}");
         chatList = List.generate(
           jsonResponse['choices'].length,
           (index) => ChatModel(

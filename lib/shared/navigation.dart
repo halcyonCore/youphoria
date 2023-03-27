@@ -18,9 +18,19 @@ class _NavigationState extends State<Navigation> {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBody: true,
+      floatingActionButton: Padding(
+        padding: const EdgeInsets.only(right: 6),
+        child: FloatingActionButton(
+          shape: const CircleBorder(),
+          onPressed: () {
+            Navigator.pushNamed(context, '/chat');
+          },
+          backgroundColor: Theme.of(context).colorScheme.primary,
+          child: const Icon(Icons.chat_bubble_outline_rounded),
+        ),
+      ),
       bottomNavigationBar: Container(
-        margin: const EdgeInsets.only(bottom: 40, top: 15, right: 15, left: 15),
-        // padding: EdgeInsets.only(bottom: 10, top: 10, right: 10, left: 10),
+        margin: const EdgeInsets.only(bottom: 40, top: 0, right: 15, left: 15),
         clipBehavior: Clip.antiAlias,
         decoration: BoxDecoration(
           boxShadow: [
