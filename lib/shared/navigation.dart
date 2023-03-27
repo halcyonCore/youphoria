@@ -17,38 +17,69 @@ class _NavigationState extends State<Navigation> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: NavigationBar(
-        backgroundColor: const Color(0xFF0c1421),
-        surfaceTintColor: const Color(0xFF000000),
-        onDestinationSelected: (int index) {
-          setState(() {
-            currentPageIndex = index;
-          });
-        },
-        selectedIndex: currentPageIndex,
-        destinations: const <Widget>[
-          NavigationDestination(
-            icon: Icon(
-              FontAwesomeIcons.house,
-              size: 20,
+      extendBody: true,
+      bottomNavigationBar: Container(
+        margin: const EdgeInsets.only(bottom: 40, top: 15, right: 15, left: 15),
+        // padding: EdgeInsets.only(bottom: 10, top: 10, right: 10, left: 10),
+        clipBehavior: Clip.antiAlias,
+        decoration: BoxDecoration(
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.2),
+              spreadRadius: 4,
+              blurRadius: 10,
+              offset: const Offset(0, 3), // changes x,y position of shadow
             ),
-            label: 'Explore',
+          ],
+          borderRadius: const BorderRadius.all(
+            Radius.circular(50),
           ),
-          NavigationDestination(
-            icon: Icon(
-              FontAwesomeIcons.magnifyingGlass,
-              size: 20,
+        ),
+        child: NavigationBar(
+          backgroundColor: Theme.of(context).colorScheme.inverseSurface,
+          shadowColor: Theme.of(context).colorScheme.inverseSurface,
+          elevation: 5,
+          height: 60,
+          surfaceTintColor: Theme.of(context).colorScheme.inverseSurface,
+          onDestinationSelected: (int index) {
+            setState(() {
+              currentPageIndex = index;
+            });
+          },
+          selectedIndex: currentPageIndex,
+          destinations: <Widget>[
+            Container(
+              padding: const EdgeInsets.only(top: 35),
+              child: const NavigationDestination(
+                icon: Icon(
+                  FontAwesomeIcons.house,
+                  size: 20,
+                ),
+                label: 'Explore',
+              ),
             ),
-            label: 'Search',
-          ),
-          NavigationDestination(
-            icon: Icon(
-              FontAwesomeIcons.user,
-              size: 20,
+            Container(
+              padding: const EdgeInsets.only(top: 35),
+              child: const NavigationDestination(
+                icon: Icon(
+                  FontAwesomeIcons.magnifyingGlass,
+                  size: 20,
+                ),
+                label: 'Search',
+              ),
             ),
-            label: 'Profile',
-          ),
-        ],
+            Container(
+              padding: const EdgeInsets.only(top: 35),
+              child: const NavigationDestination(
+                icon: Icon(
+                  FontAwesomeIcons.user,
+                  size: 20,
+                ),
+                label: 'Profile',
+              ),
+            ),
+          ],
+        ),
       ),
       body: const <Widget>[
         ExploreScreen(),
