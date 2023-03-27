@@ -32,7 +32,8 @@ class SearchScreen extends StatelessWidget {
             ],
           ),
         ),
-        child: GoogleMapsScreen(),
+        child:
+            FractionallySizedBox(heightFactor: .5, child: GoogleMapsScreen()),
       ),
     );
   }
