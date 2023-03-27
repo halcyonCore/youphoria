@@ -34,7 +34,12 @@ class _ChatScreenState extends State<ChatScreen> {
     super.dispose();
   }
 
-  List<ChatModel> chatList = [];
+  List<ChatModel> chatList = [
+    ChatModel(
+        message:
+            "Hey there! I'm your friendly AI chatbot, ready to help with any sex ed questions you may have. Don't worry, you're not talking to a person, so feel free to ask anything in total privacy. \n\nJust type your question, and I'll do my best to help! 😊",
+        chatIndex: 1),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -133,7 +138,7 @@ class _ChatScreenState extends State<ChatScreen> {
                               await _sendMessage(textEditingController.text);
                             },
                             decoration: InputDecoration.collapsed(
-                              hintText: 'Hi, how can I help you?',
+                              hintText: 'Ask me anything...',
                               hintStyle: TextStyle(
                                 color:
                                     Theme.of(context).colorScheme.onBackground,
