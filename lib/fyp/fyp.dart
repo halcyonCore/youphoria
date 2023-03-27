@@ -35,9 +35,9 @@ class FypScreen extends StatelessWidget {
           ],
         ),
       ),
-      backgroundColor: const Color(0xFF0c1421),
+      // backgroundColor: const Color(0xFF0c1421),
       appBar: AppBar(
-        backgroundColor: const Color(0xFF0c1421),
+        // backgroundColor: const Color(0xFF0c1421),
         title: const Text(
           'FYP',
           style: TextStyle(fontWeight: FontWeight.bold),
