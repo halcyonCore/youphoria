@@ -18,9 +18,9 @@ class ProfileScreen extends StatelessWidget {
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
                 colors: [
-                  Theme.of(context).colorScheme.secondaryContainer,
-                  Theme.of(context).colorScheme.secondaryContainer,
-                  Theme.of(context).colorScheme.primaryContainer,
+                  Theme.of(context).colorScheme.secondary,
+                  Theme.of(context).colorScheme.secondary,
+                  Theme.of(context).colorScheme.primary,
                 ],
               ),
             ),
@@ -52,9 +52,7 @@ class ProfileScreen extends StatelessWidget {
                         Container(
                           width: 40,
                           decoration: BoxDecoration(
-                            color: Theme.of(context)
-                                .colorScheme
-                                .secondaryContainer,
+                            color: Theme.of(context).colorScheme.secondary,
                           ),
                         ),
                       ],
@@ -114,8 +112,7 @@ class ProfileScreen extends StatelessWidget {
                                 ),
                                 backgroundColor: Theme.of(context)
                                     .colorScheme
-                                    .primaryContainer
-                                    .withOpacity(.5),
+                                    .primaryContainer,
                                 minimumSize: const Size(double.infinity, 100),
                               ),
                             ),
@@ -145,8 +142,34 @@ class ProfileScreen extends StatelessWidget {
                                 ),
                                 backgroundColor: Theme.of(context)
                                     .colorScheme
-                                    .primaryContainer
-                                    .withOpacity(.5),
+                                    .primaryContainer,
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(10),
+                            child: OutlinedButton(
+                              onPressed: () =>
+                                  Navigator.pushNamed(context, '/chat'),
+                              child: Text(
+                                "temp: go to chat",
+                                style: TextStyle(
+                                  color: Theme.of(context)
+                                      .colorScheme
+                                      .onBackground,
+                                ),
+                              ),
+                              style: OutlinedButton.styleFrom(
+                                side: BorderSide(
+                                  color: Theme.of(context)
+                                      .colorScheme
+                                      .inverseSurface
+                                      .withOpacity(.5),
+                                  width: 1,
+                                ),
+                                backgroundColor: Theme.of(context)
+                                    .colorScheme
+                                    .primaryContainer,
                               ),
                             ),
                           ),

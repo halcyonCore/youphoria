@@ -18,12 +18,12 @@ final List<Topic> dummyTopics = [
   Topic(
     name: 'Gender',
     img: 'assets/images/gender.png',
-    url: '',
+    url: '/gender',
   ),
   Topic(
       name: 'Sexual Orientation',
       img: 'assets/images/sexual-orientation.png',
-      url: ''),
+      url: '/sexual-orientation'),
   Topic(name: 'Communication', img: 'assets/images/communication.png', url: ''),
   Topic(name: 'Puberty', img: 'assets/images/puberty.png', url: ''),
   Topic(name: 'Consent', img: 'assets/images/consent.png', url: ''),
@@ -53,8 +53,9 @@ class ExploreScreen extends StatelessWidget {
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
               colors: [
-                Theme.of(context).colorScheme.primaryContainer,
-                Theme.of(context).colorScheme.secondaryContainer
+                Theme.of(context).colorScheme.primary,
+                Theme.of(context).colorScheme.primary,
+                Theme.of(context).colorScheme.secondary,
               ],
             ),
           ),
@@ -80,7 +81,7 @@ class ExploreScreen extends StatelessWidget {
             children: [
               Container(
                 decoration: BoxDecoration(
-                  color: Theme.of(context).colorScheme.primaryContainer,
+                  color: Theme.of(context).colorScheme.primary,
                 ),
                 child: Container(
                   decoration: BoxDecoration(
@@ -100,6 +101,7 @@ class ExploreScreen extends StatelessWidget {
                       (index) {
                         final topic = dummyTopics[index];
                         final image = dummyTopics[index].img;
+                        final url = dummyTopics[index].url;
                         return Container(
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(4.0),
@@ -109,15 +111,12 @@ class ExploreScreen extends StatelessWidget {
                             clipBehavior: Clip.antiAlias, // <--add this
 
                             onPressed: () {
-                              Navigator.pushNamed(context, '/communication');
+                              Navigator.pushNamed(context, url);
                             },
                             style: OutlinedButton.styleFrom(
                               padding: EdgeInsets.zero, // <--add this
                               side: BorderSide(
-                                color: Theme.of(context)
-                                    .colorScheme
-                                    .inverseSurface
-                                    .withOpacity(.5),
+                                color: Theme.of(context).colorScheme.primary,
                                 width: 1,
                               ),
                               shape: RoundedRectangleBorder(
@@ -128,8 +127,7 @@ class ExploreScreen extends StatelessWidget {
                               decoration: BoxDecoration(
                                 color: Theme.of(context)
                                     .colorScheme
-                                    .primaryContainer
-                                    .withOpacity(.5),
+                                    .primaryContainer,
                                 borderRadius: BorderRadius.circular(1),
                                 image: DecorationImage(
                                   image: AssetImage(image),

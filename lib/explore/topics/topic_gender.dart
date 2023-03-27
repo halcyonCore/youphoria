@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:youphoria/shared/subtopic_card.dart';
+import 'package:youphoria/explore/topics/gender_identities_card.dart';
 
-class CommunicationScreen extends StatelessWidget {
-  const CommunicationScreen({super.key});
+class GenderScreen extends StatelessWidget {
+  const GenderScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +36,7 @@ class CommunicationScreen extends StatelessWidget {
                       Container(
                         alignment: Alignment.topLeft,
                         child: Text(
-                          "Communication",
+                          "Gender",
                           style: TextStyle(
                             color: Theme.of(context).colorScheme.onBackground,
                             fontSize: 40.0,
@@ -46,7 +47,7 @@ class CommunicationScreen extends StatelessWidget {
                       Container(
                         alignment: Alignment.topLeft,
                         child: Text(
-                          "By embracing open and compassionate communication, you can build strong, healthy relationships with your partners and create an inclusive and supportive atmosphere for everyone. You're not alone in this journey, and talking openly with your partner is a fantastic way to connect and grow together.",
+                          "It's important to be respectful and understanding when learning about different gender identities. If you're ever unsure about someone's pronouns or how they identify, it's always best to ask politely. By being open-minded and inclusive, we can help everyone feel seen, understood, and supported.",
                           style: TextStyle(
                             color: Theme.of(context).colorScheme.onBackground,
                             fontSize: 17.0,
@@ -77,43 +78,44 @@ class CommunicationScreen extends StatelessWidget {
                       const EdgeInsets.only(right: 15, left: 15, bottom: 30),
                   child: Column(
                     children: const [
+                      GenderIdentitiesCard(
+                          title: 'Understanding Gender Identities',
+                          description: "figure out list"),
                       SubtopicCard(
-                        title: 'Open Up About Your Feelings',
+                        title: 'Respect and Acceptance',
                         description:
-                            'Don\'t be afraid to share your thoughts and emotions with your partner. Being honest about how you feel can help build trust and create a stronger bond.',
+                            "Embrace the uniqueness of every individual, and respect their gender identity, even if it\'s different from your own. This helps create a more inclusive and understanding space for everyone.",
                       ),
                       SubtopicCard(
-                          title: 'Talk About Boundaries',
-                          description:
-                              "Let your partner know what you're comfortable with and what your limits are. It's totally okay to have boundaries, and it's crucial to respect each other\'s."),
+                        title: 'Pronouns Matter',
+                        description:
+                            "Use the correct pronouns when referring to someone, whether it\'s he/him, she/her, they/them, or another pronoun they prefer. If you\'re unsure, just ask! It\'s a small gesture that makes a big difference.",
+                      ),
                       SubtopicCard(
-                          title: 'Discuss Consent',
-                          description:
-                              "Remember, consent is essential for any sexual activity. Make sure you and your partner are on the same page and always check in to ensure you both feel comfortable and safe."),
+                        title: 'Be Aware of Stereotypes',
+                        description:
+                            "Challenge common stereotypes and assumptions about gender roles and expectations. Encourage open-mindedness and promote the idea that everyone should be free to express themselves as they truly are.",
+                      ),
                       SubtopicCard(
-                          title: 'Share Your Desires',
-                          description:
-                              "It's important to communicate your likes and dislikes openly. Don\'t be shy! Sharing your desires can lead to a more satisfying and enjoyable experience for both of you."),
+                        title: 'Practice Active Listening',
+                        description:
+                            "When your partner speaks, really listen to what they're saying. Ask questions and engage in the conversation, so they know you're truly hearing them.",
+                      ),
                       SubtopicCard(
-                          title: 'Practice Active Listening',
-                          description:
-                              "When your partner speaks, really listen to what they're saying. Ask questions and engage in the conversation, so they know you're truly hearing them."),
+                        title: 'Support Your Peers',
+                        description:
+                            "Offer support and understanding to your friends or classmates who may be exploring their gender identity. Be a good listener, and respect their feelings and privacy.",
+                      ),
                       SubtopicCard(
-                          title: 'Be Open to Feedback',
-                          description:
-                              "It\'s normal for things to not always go perfectly. Be open to feedback and willing to learn from your partner's experiences and preferences."),
+                        title: 'Educate Yourself',
+                        description:
+                            "Keep learning about gender identities and the experiences of those who may be different from you. Stay informed and be open to new ideas and perspectives.",
+                      ),
                       SubtopicCard(
-                          title: 'Choose the Right Time and Place',
-                          description:
-                              "Find a quiet, private space where you can discuss sensitive topics without distractions or interruptions. Make sure you/'re both relaxed and comfortable."),
-                      SubtopicCard(
-                          title: 'Be Patient and Compassionate',
-                          description:
-                              "Remember that everyone has different backgrounds, experiences, and comfort levels. Be patient and compassionate when discussing sexual topics, and never judge or criticize your partner for their feelings or choices."),
-                      SubtopicCard(
-                          title: 'Keep the Conversation Going',
-                          description:
-                              "Communication doesn\'t end after one talk. Keep the lines of communication open and continue to discuss your thoughts, feelings, and experiences as your relationship evolves."),
+                        title: 'Stand Up Against Discrimination',
+                        description:
+                            "If you witness or experience discrimination or bullying based on someone\'s gender identity, speak up and seek help from a trusted adult or authority figure.",
+                      ),
                     ],
                   ),
                 ),

@@ -3,17 +3,17 @@ import 'package:google_fonts/google_fonts.dart';
 
 const lightColorScheme = ColorScheme(
   brightness: Brightness.light,
-  primary: Color(0xFF7AE1FF),
+  primary: Color(0xFF56ACF5),
   onPrimary: Color(0xFFFFFFFF),
-  primaryContainer: Color(0xFF9EE4FA), // original: 0xFFADECFF
+  primaryContainer: Color(0xFFEDF5FF),
   onPrimaryContainer: Color(0xFF003A4B),
-  secondary: Color(0xFFAD97FF),
+  secondary: Color(0xFF8F7BEE),
   onSecondary: Color(0xFF120052),
-  secondaryContainer: Color(0xFFB9A8F5), // original: 0xFFE5DEFF
+  secondaryContainer: Color(0xFFF6F4FF),
   onSecondaryContainer: Color(0xFF1A0261),
-  tertiary: Color(0xFFFFAF99),
+  tertiary: Color(0xFFF0614F),
   onTertiary: Color(0xFF521200),
-  tertiaryContainer: Color(0xFFF9D3C8), // original: 0xFFFFDAD7
+  tertiaryContainer: Color(0xFFFEEDE6),
   onTertiaryContainer: Color(0xFF410004),
   error: Color(0xFFBA1A1A),
   errorContainer: Color(0xFFFFB0C8), // modified
@@ -22,15 +22,15 @@ const lightColorScheme = ColorScheme(
   background: Color(0xFFFFFBFF), // leave as is
   onBackground: Color(0xFF2B0052),
   surface: Color(0xFFFFFBFF),
-  onSurface: Color.fromARGB(255, 156, 232, 255),
+  onSurface: Color(0xFF78BCF7),
   surfaceVariant: Color(0xFFDBE4E7),
-  onSurfaceVariant: Color.fromARGB(255, 105, 152, 167),
+  onSurfaceVariant: Color(0xFF8F7BEE),
   outline: Color(0xFF094074),
   onInverseSurface: Color(0xFFF9ECFF),
-  inverseSurface: Color(0xFF094074), // modified
+  inverseSurface: Color(0xFF0A2463), // modified
   inversePrimary: Color(0xFF56D6F5),
   shadow: Color(0xFF000000),
-  surfaceTint: Color(0xFF00687A),
+  surfaceTint: Color.fromARGB(255, 214, 19, 152),
   outlineVariant: Color(0xFFBFC8CB),
   scrim: Color(0xFFb3d1ff), // modified
 );
@@ -77,6 +77,10 @@ class YouphoriaTheme {
       brightness: Brightness.light,
       colorScheme: lightColorScheme,
       fontFamily: GoogleFonts.comfortaa().fontFamily,
+      navigationBarTheme: const NavigationBarThemeData(
+        // Set the active color to the color you want to use for the selected item
+        indicatorColor: Color(0xFF56ACF5),
+      ),
     );
   }
 }

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:youphoria/theme.dart';
 
 class SubtopicCard extends StatefulWidget {
   final String title;
@@ -16,11 +15,11 @@ class SubtopicCard extends StatefulWidget {
 class _SubtopicCardState extends State<SubtopicCard> {
   bool isFavorite = false;
 
-  void _toggleFavorite() {
-    setState(() {
-      isFavorite = !isFavorite;
-    });
-  }
+  // void _toggleFavorite() {
+  //   setState(() {
+  //     isFavorite = !isFavorite;
+  //   });
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -28,18 +27,21 @@ class _SubtopicCardState extends State<SubtopicCard> {
       padding: const EdgeInsets.only(top: 20),
       child: Container(
         decoration: BoxDecoration(
-          color:
-              Theme.of(context).colorScheme.secondaryContainer.withOpacity(0.5),
+          color: Theme.of(context).colorScheme.secondaryContainer,
           borderRadius: BorderRadius.circular(35),
+          border: Border.all(
+            color: Theme.of(context).colorScheme.secondary,
+            width: 1.0,
+          ),
         ),
         child: Padding(
           padding:
-              const EdgeInsets.only(top: 30, bottom: 6, left: 20, right: 20),
+              const EdgeInsets.only(top: 20, bottom: 25, left: 20, right: 20),
           child: Column(
             children: [
               Container(
                 alignment: Alignment.topLeft,
-                padding: EdgeInsets.only(bottom: 6),
+                padding: const EdgeInsets.only(bottom: 6),
                 child: Text(
                   widget.title,
                   textAlign: TextAlign.left,
@@ -57,32 +59,28 @@ class _SubtopicCardState extends State<SubtopicCard> {
                   fontSize: 15,
                 ),
               ),
-              Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    IconButton(
-                      onPressed: _toggleFavorite,
-                      icon: Icon(
-                        isFavorite
-                            ? FontAwesomeIcons.solidHeart
-                            : FontAwesomeIcons.heart,
-                        size: 20,
-                        color: isFavorite
-                            ? Theme.of(context).colorScheme.tertiary
-                            : null,
-                      ),
-                      // icon: Icon(
-                      //   isFavorite ? Icons.favorite : Icons.favorite_border,
-                      //   color: isFavorite ? Theme.of(context).colorScheme.tertiary : null,
-                      // ),
-                    ),
-                  ],
-                ),
-              ),
+              // Container(
+              //   decoration: BoxDecoration(
+              //     borderRadius: BorderRadius.circular(20),
+              //   ),
+              //   child: Row(
+              //     mainAxisAlignment: MainAxisAlignment.end,
+              //     children: [
+              //       IconButton(
+              //         onPressed: _toggleFavorite,
+              //         icon: Icon(
+              //           isFavorite
+              //               ? FontAwesomeIcons.solidHeart
+              //               : FontAwesomeIcons.heart,
+              //           size: 20,
+              //           color: isFavorite
+              //               ? Theme.of(context).colorScheme.tertiary
+              //               : null,
+              //         ),
+              //       ),
+              //     ],
+              //   ),
+              // ),
             ],
           ),
         ),

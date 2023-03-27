@@ -19,7 +19,7 @@ class _NavigationState extends State<Navigation> {
     return Scaffold(
       extendBody: true,
       bottomNavigationBar: Container(
-        margin: EdgeInsets.only(bottom: 40, top: 15, right: 15, left: 15),
+        margin: const EdgeInsets.only(bottom: 40, top: 15, right: 15, left: 15),
         // padding: EdgeInsets.only(bottom: 10, top: 10, right: 10, left: 10),
         clipBehavior: Clip.antiAlias,
         decoration: BoxDecoration(
@@ -28,10 +28,10 @@ class _NavigationState extends State<Navigation> {
               color: Colors.black.withOpacity(0.2),
               spreadRadius: 4,
               blurRadius: 10,
-              offset: Offset(0, 3), // changes x,y position of shadow
+              offset: const Offset(0, 3), // changes x,y position of shadow
             ),
           ],
-          borderRadius: BorderRadius.all(
+          borderRadius: const BorderRadius.all(
             Radius.circular(50),
           ),
         ),
