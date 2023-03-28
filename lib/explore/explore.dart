@@ -28,7 +28,7 @@ final List<Topic> dummyTopics = [
       name: 'Communication',
       img: 'assets/images/communication.png',
       url: '/communication'),
-  Topic(name: 'Puberty', img: 'assets/images/puberty.png', url: ''),
+  Topic(name: 'Puberty', img: 'assets/images/puberty.png', url: '/puberty'),
   Topic(name: 'Consent', img: 'assets/images/consent.png', url: ''),
   Topic(name: 'Contraception', img: 'assets/images/contraception.png', url: ''),
   Topic(name: 'STIs', img: 'assets/images/sti.png', url: ''),

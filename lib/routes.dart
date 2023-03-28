@@ -2,6 +2,7 @@ import 'package:youphoria/chat/chat.dart';
 import 'package:youphoria/explore/explore.dart';
 import 'package:youphoria/explore/topics/topic_communication.dart';
 import 'package:youphoria/explore/topics/topic_gender.dart';
+import 'package:youphoria/explore/topics/topic_puberty.dart';
 import 'package:youphoria/explore/topics/topic_sexual_orientation.dart';
 import 'package:youphoria/fyp/fyp.dart';
 import 'package:youphoria/login/login.dart';
@@ -19,5 +20,6 @@ var appRoutes = {
   '/communication': (context) => const CommunicationScreen(),
   '/gender': (context) => const GenderScreen(),
   '/sexual-orientation': (context) => const SexualOrientationScreen(),
+  '/puberty': (context) => const PubertyScreen(),
   '/chat': (context) => const ChatScreen(),
 };
