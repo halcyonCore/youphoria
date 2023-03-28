@@ -1,4 +1,6 @@
-import 'package:flutter/material.dart';
+// import 'package:flutter/material.dart';
+
+const String google_maps_api_key = "AIzaSyBIYciFp8vHifa_2r0FV22IZEfNWK_YSIg";
 
 // final chatMessages = [
 //   {
