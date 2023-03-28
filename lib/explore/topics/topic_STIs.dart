@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:youphoria/explore/topics/puberty_xx_card.dart';
-import 'package:youphoria/explore/topics/puberty_xy_card.dart';
-import 'package:youphoria/explore/topics/puberty_intersex_card.dart';
+import 'package:youphoria/explore/topics/sti_common_stis_card.dart';
+import 'package:youphoria/explore/topics/sti_stigma_card.dart';
+import 'package:youphoria/shared/subtopic_card.dart';
+import 'package:youphoria/explore/topics/gender_identities_card.dart';
 
-class PubertyScreen extends StatelessWidget {
-  const PubertyScreen({super.key});
+class STIScreen extends StatelessWidget {
+  const STIScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +38,7 @@ class PubertyScreen extends StatelessWidget {
                       Container(
                         alignment: Alignment.topLeft,
                         child: Text(
-                          "Puberty",
+                          "Sexually Transmitted Infections (STIs)",
                           style: TextStyle(
                             color: Theme.of(context).colorScheme.onBackground,
                             fontSize: 40.0,
@@ -48,7 +49,7 @@ class PubertyScreen extends StatelessWidget {
                       Container(
                         alignment: Alignment.topLeft,
                         child: Text(
-                          "Individuals with XX chromosomes are typically assigned female at birth, while those with XY chromosomes are usually assigned male at birth. Intersex individuals can have diverse chromosomal variations, and their assigned gender at birth may be male, female, or intersex, depending on their unique circumstances.",
+                          "Understanding what STIs are, how they're transmitted, and the potential risks involved is crucial. Some common STIs include chlamydia, gonorrhea, syphilis, herpes, human papillomavirus (HPV), and HIV.",
                           style: TextStyle(
                             color: Theme.of(context).colorScheme.onBackground,
                             fontSize: 17.0,
@@ -79,18 +80,31 @@ class PubertyScreen extends StatelessWidget {
                       const EdgeInsets.only(right: 15, left: 15, bottom: 30),
                   child: Column(
                     children: const [
-                      PubertyXXCard(
-                        title: 'XX Chromosomes',
-                        description: "(Assigned Female at Birth)",
-                      ),
-                      PubertyXYCard(
-                        title: "XY Chromosomes",
-                        description: "(Assigned Male at Birth)",
-                      ),
-                      PubertyIntersexCard(
-                        title: 'Intersex (XXY, XYY, XXX, XO, XX/XY, and more)',
+                      CommonSTIsCard(title: 'Common STIs', description: ""),
+                      SubtopicCard(
+                        title: 'Symptoms and Testing',
                         description:
-                            "Embrace and respect the diverse range of sexual orientations and gender identities that people may have. Accept and celebrate the uniqueness of each individual, fostering a supportive environment for everyone.",
+                            "Be aware of the possible symptoms of STIs, but also remember that many STIs can be asymptomatic. Regular testing is essential for maintaining your sexual health, even if you feel fine.",
+                      ),
+                      SubtopicCard(
+                        title: 'Protection',
+                        description:
+                            "Using barrier methods like condoms and dental dams during sexual activities can significantly reduce the risk of transmitting or contracting STIs. It's essential to know how to use these methods correctly and consistently.",
+                      ),
+                      SubtopicCard(
+                        title: 'Communication',
+                        description:
+                            "Talk openly and honestly with your sexual partners about your STI status, testing history, and boundaries. This kind of communication can help build trust and create a safer, more supportive environment for everyone involved.",
+                      ),
+                      STIStigmaCard(
+                        title: 'Stigma and Support',
+                        description:
+                            "It's crucial to challenge the stigma surrounding STIs and create an inclusive, understanding atmosphere. Remember that anyone can contract an STI, and it's essential to offer support and compassion to those affected.",
+                      ),
+                      SubtopicCard(
+                        title: 'Prevention',
+                        description:
+                            "In addition to barrier methods, some STIs have vaccines available, such as the HPV vaccine. Staying informed about these prevention methods can further protect you and your partners.",
                       ),
                     ],
                   ),

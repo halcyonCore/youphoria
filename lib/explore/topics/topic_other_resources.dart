@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:youphoria/explore/topics/puberty_xx_card.dart';
-import 'package:youphoria/explore/topics/puberty_xy_card.dart';
-import 'package:youphoria/explore/topics/puberty_intersex_card.dart';
+import 'package:youphoria/explore/topics/hotline_resources_card.dart';
+import 'package:youphoria/explore/topics/other_resources_card.dart';
+import 'package:youphoria/shared/phone_number_link.dart';
+import 'package:youphoria/shared/web_link.dart';
 
-class PubertyScreen extends StatelessWidget {
-  const PubertyScreen({super.key});
+class OtherResourcesScreen extends StatelessWidget {
+  const OtherResourcesScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +38,7 @@ class PubertyScreen extends StatelessWidget {
                       Container(
                         alignment: Alignment.topLeft,
                         child: Text(
-                          "Puberty",
+                          "Consent",
                           style: TextStyle(
                             color: Theme.of(context).colorScheme.onBackground,
                             fontSize: 40.0,
@@ -48,7 +49,7 @@ class PubertyScreen extends StatelessWidget {
                       Container(
                         alignment: Alignment.topLeft,
                         child: Text(
-                          "Individuals with XX chromosomes are typically assigned female at birth, while those with XY chromosomes are usually assigned male at birth. Intersex individuals can have diverse chromosomal variations, and their assigned gender at birth may be male, female, or intersex, depending on their unique circumstances.",
+                          "By prioritizing consent, communication, and boundaries, you can feel safe and confident in your sexual experiences. This foundation fosters trust and understanding, empowering you and your partner to navigate your own unique journey.",
                           style: TextStyle(
                             color: Theme.of(context).colorScheme.onBackground,
                             fontSize: 17.0,
@@ -79,18 +80,29 @@ class PubertyScreen extends StatelessWidget {
                       const EdgeInsets.only(right: 15, left: 15, bottom: 30),
                   child: Column(
                     children: const [
-                      PubertyXXCard(
-                        title: 'XX Chromosomes',
-                        description: "(Assigned Female at Birth)",
-                      ),
-                      PubertyXYCard(
-                        title: "XY Chromosomes",
-                        description: "(Assigned Male at Birth)",
-                      ),
-                      PubertyIntersexCard(
-                        title: 'Intersex (XXY, XYY, XXX, XO, XX/XY, and more)',
+                      OtherResourcesCard(
+                        title: 'Bedsider',
                         description:
-                            "Embrace and respect the diverse range of sexual orientations and gender identities that people may have. Accept and celebrate the uniqueness of each individual, fostering a supportive environment for everyone.",
+                            "Bedsider is an online birth control support network that provides information on different birth control methods and helps users find nearby providers.",
+                        webLink: WebLink(
+                          url: "https://www.bedsider.org/",
+                        ),
+                      ),
+                      OtherResourcesCard(
+                        title: 'Title X Family Planning Clinics',
+                        description:
+                            "Title X clinics provide affordable reproductive health care services, including birth control, STI testing, and cancer screenings.",
+                        webLink: WebLink(
+                          url: "https://opa-fpclinicdb.hhs.gov/",
+                        ),
+                      ),
+                      OtherResourcesCard(
+                        title: 'Abortion Finder',
+                        description:
+                            "Abortion Finder is a user-friendly search platform that connects individuals with a comprehensive database of over 750 verified abortion providers throughout the nation. By simply entering your age, the first day of your last menstrual period, and your location, Abortion Finder will generate a list of nearby abortion providers who can assist you with your needs.",
+                        webLink: WebLink(
+                          url: "https://www.abortionfinder.org/",
+                        ),
                       ),
                     ],
                   ),

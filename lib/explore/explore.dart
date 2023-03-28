@@ -29,14 +29,17 @@ final List<Topic> dummyTopics = [
       img: 'assets/images/communication.png',
       url: '/communication'),
   Topic(name: 'Puberty', img: 'assets/images/puberty.png', url: '/puberty'),
-  Topic(name: 'Consent', img: 'assets/images/consent.png', url: ''),
-  Topic(name: 'Contraception', img: 'assets/images/contraception.png', url: ''),
-  Topic(name: 'STIs', img: 'assets/images/sti.png', url: ''),
-  Topic(name: 'Hotlines', img: 'assets/images/hotlines.png', url: ''),
+  Topic(name: 'Consent', img: 'assets/images/consent.png', url: '/consent'),
+  Topic(
+      name: 'Contraception',
+      img: 'assets/images/contraception.png',
+      url: '/contraception'),
+  Topic(name: 'STIs', img: 'assets/images/sti.png', url: '/sti'),
+  Topic(name: 'Hotlines', img: 'assets/images/hotlines.png', url: '/hotlines'),
   Topic(
       name: 'Other Resources',
       img: 'assets/images/other-resources.png',
-      url: ''),
+      url: '/other-resources'),
 ];
 // END DUMMY DATA
 
