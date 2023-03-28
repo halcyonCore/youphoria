@@ -48,6 +48,16 @@ class SearchScreen extends StatelessWidget {
           ),
           child: Column(
             children: [
+              TextField(
+                obscureText: true,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'Password',
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
               Container(
                 padding: EdgeInsets.zero,
                 clipBehavior: Clip.antiAlias,

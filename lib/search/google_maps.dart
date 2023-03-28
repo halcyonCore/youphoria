@@ -22,14 +22,19 @@ class _GoogleMapsScreenState extends State<GoogleMapsScreen> {
   static const LatLng destinationLocation =
       LatLng(30.045531903807998, -97.84454879259341);
 
-  List<LatLng> polylineCoordinates = [];
+  List<LatLng> polylineCoordinates = [startLocation, destinationLocation];
   LocationData? currentLocation;
 
   Future<void> getCurrentLocation() async {
     Location location = Location();
-    currentLocation = await location.getLocation(); //test
-
-    print('currentLocation: $currentLocation');
+    try {
+      currentLocation = await location.getLocation();
+      print('currentLocation: $currentLocation');
+      setState(() {});
+    } catch (e) {
+      print('Error: ${e.toString()}');
+      // Handle error here
+    }
   }
 
   Future<void> getPolyPoints() async {
@@ -41,29 +46,53 @@ class _GoogleMapsScreenState extends State<GoogleMapsScreen> {
     );
 
     if (result.points.isNotEmpty) {
-      result.points.forEach(
-        (PointLatLng point) => polylineCoordinates.add(
-          LatLng(point.latitude, point.longitude),
-        ),
-      );
-      setState(() {});
+      // result.points.forEach(
+      //   (PointLatLng point) => polylineCoordinates.add(
+      //     LatLng(point.latitude, point.longitude),
+      //   ),
+      // );
+      // setState(() {});
+      if (result.points.isNotEmpty) {
+        setState(() {
+          polylineCoordinates.clear();
+          result.points.forEach((PointLatLng point) {
+            polylineCoordinates.add(LatLng(point.latitude, point.longitude));
+          });
+        });
+      }
     }
   }
 
   @override
   void initState() {
-    getCurrentLocation();
-    getPolyPoints();
+    // getCurrentLocation();
+    // getPolyPoints();
+    // super.initState();
     super.initState();
+    getCurrentLocation();
+    Timer.periodic(const Duration(seconds: 5), (_) {
+      getCurrentLocation();
+    });
+  }
+
+  @override
+  void didUpdateWidget(covariant GoogleMapsScreen oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (currentLocation != null) {
+      getPolyPoints();
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
+      future: getCurrentLocation(),
       builder: (context, snapshot) {
-        if (snapshot.connectionState == ConnectionState.waiting) {
+        while (currentLocation == null) {
           return Center(
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const Text('Loading...'),
                 // SpinKitChasingDots(),
@@ -72,27 +101,39 @@ class _GoogleMapsScreenState extends State<GoogleMapsScreen> {
           );
         }
         return GoogleMap(
+          onMapCreated: _controller.complete,
+          myLocationEnabled: true,
           initialCameraPosition: CameraPosition(
-            target: startLocation,
+            target: currentLocation != null
+                ? LatLng(
+                    currentLocation!.latitude!,
+                    currentLocation!.longitude!,
+                  )
+                : startLocation,
             zoom: 13.5,
           ),
           polylines: {
             Polyline(
               polylineId: PolylineId('route'),
-              // color: Theme.of(context).colorScheme.secondary,
+              color: Theme.of(context).colorScheme.primary,
               width: 6,
               points: polylineCoordinates,
             ),
           },
           markers: {
+            Marker(
+              markerId: const MarkerId('currentLocation'),
+              position: currentLocation != null
+                  ? LatLng(
+                      currentLocation!.latitude!,
+                      currentLocation!.longitude!,
+                    )
+                  : startLocation,
+            ),
             const Marker(
               markerId: MarkerId('start'),
               position: startLocation,
             ),
-            // Marker(
-            //   markerId: MarkerId('start'),
-            //   position: startLocation,
-            // ),
             const Marker(
               markerId: MarkerId('destination'),
               position: destinationLocation,
