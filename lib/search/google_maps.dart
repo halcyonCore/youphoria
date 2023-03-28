@@ -15,12 +15,11 @@ class GoogleMapsScreen extends StatefulWidget {
 
 class _GoogleMapsScreenState extends State<GoogleMapsScreen> {
   final Completer<GoogleMapController> _controller = Completer();
-  final LatLng _center = const LatLng(45.521563, -122.677433);
 
   static const LatLng startLocation =
-      LatLng(29.884503847254138, -97.94877946442723);
+      LatLng(37.33178348123003, -122.0320906906449);
   static const LatLng destinationLocation =
-      LatLng(30.045531903807998, -97.84454879259341);
+      LatLng(37.323139045864274, -122.0320428007709);
 
   List<LatLng> polylineCoordinates = [startLocation, destinationLocation];
   LocationData? currentLocation;
@@ -94,7 +93,7 @@ class _GoogleMapsScreenState extends State<GoogleMapsScreen> {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Text('Loading...'),
+                const Text('Loading map...'),
                 // SpinKitChasingDots(),
               ],
             ),
@@ -121,15 +120,15 @@ class _GoogleMapsScreenState extends State<GoogleMapsScreen> {
             ),
           },
           markers: {
-            Marker(
-              markerId: const MarkerId('currentLocation'),
-              position: currentLocation != null
-                  ? LatLng(
-                      currentLocation!.latitude!,
-                      currentLocation!.longitude!,
-                    )
-                  : startLocation,
-            ),
+            // Marker(
+            //   markerId: const MarkerId('currentLocation'),
+            //   position: currentLocation != null
+            //       ? LatLng(
+            //           currentLocation!.latitude!,
+            //           currentLocation!.longitude!,
+            //         )
+            //       : startLocation,
+            // ),
             const Marker(
               markerId: MarkerId('start'),
               position: startLocation,
