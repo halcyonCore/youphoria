@@ -50,7 +50,7 @@ class SexualOrientationsCard extends StatelessWidget {
               const SubtopicChildCard(
                 title: 'Homosexual',
                 description:
-                    "Attracted to the same gender. This includes gay men (guys into guys) and lesbian women (ladies into ladies).",
+                    "Attracted to the same gender. This includes gay men (guys into guys) and lesbian women (girls into girls).",
               ),
               const SubtopicChildCard(
                 title: 'Bisexual',

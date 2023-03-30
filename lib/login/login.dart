@@ -51,7 +51,7 @@ class LoginScreen extends StatelessWidget {
                         textAlign: TextAlign.center,
                       ),
                       Text(
-                        'Feel confident in your sexuality',
+                        'Embrace your unique journey',
                         style: TextStyle(
                           fontSize: 15,
                           color: Theme.of(context).colorScheme.onBackground,
@@ -76,15 +76,15 @@ class LoginScreen extends StatelessWidget {
                         text: 'Sign in with Google',
                         loginMethod: AuthService().googleLogin,
                       ),
-                      LoginButton(
-                        icon: FontAwesomeIcons.apple,
-                        text: 'Sign in with Apple (not complete)',
-                        loginMethod: AuthService().googleLogin,
-                      ),
+                      // LoginButton(
+                      //   icon: FontAwesomeIcons.apple,
+                      //   text: 'Sign in with Apple (not complete)',
+                      //   loginMethod: AuthService().googleLogin,
+                      // ),
                     ],
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 100,
                 )
               ],

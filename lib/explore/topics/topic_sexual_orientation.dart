@@ -89,7 +89,7 @@ class SexualOrientationScreen extends StatelessWidget {
                         title:
                             'The Difference Between Sex, Gender, and Sexual Orientation',
                         description:
-                            "Understand that sex is assigned at birth, gender is a social and cultural construct, and sexual orientation is about your emotional, romantic, and sexual attractions. These three aspects are distinct and do not necessarily determine one another.",
+                            "Understand that sex is assigned at birth, gender is a social and cultural construct, and sexual orientation is about your emotional, romantic, and sexual attractions. These three aspects are distinct and do not determine one another.",
                       ),
                       SubtopicCard(
                         title: 'Respect and Acceptance',
