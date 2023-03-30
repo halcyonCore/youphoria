@@ -146,33 +146,6 @@ class ProfileScreen extends StatelessWidget {
                               ),
                             ),
                           ),
-                          Padding(
-                            padding: const EdgeInsets.all(10),
-                            child: OutlinedButton(
-                              onPressed: () =>
-                                  Navigator.pushNamed(context, '/chat'),
-                              child: Text(
-                                "temp: go to chat",
-                                style: TextStyle(
-                                  color: Theme.of(context)
-                                      .colorScheme
-                                      .onBackground,
-                                ),
-                              ),
-                              style: OutlinedButton.styleFrom(
-                                side: BorderSide(
-                                  color: Theme.of(context)
-                                      .colorScheme
-                                      .inverseSurface
-                                      .withOpacity(.5),
-                                  width: 1,
-                                ),
-                                backgroundColor: Theme.of(context)
-                                    .colorScheme
-                                    .primaryContainer,
-                              ),
-                            ),
-                          ),
                         ],
                       ),
                     ),

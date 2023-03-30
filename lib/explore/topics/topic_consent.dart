@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:youphoria/explore/topics/sexual_orientations_card.dart';
-import 'package:youphoria/explore/topics/sexual_orientations_myths_card.dart';
 import 'package:youphoria/shared/subtopic_card.dart';
 import 'package:youphoria/explore/topics/gender_identities_card.dart';
 
-class SexualOrientationScreen extends StatelessWidget {
-  const SexualOrientationScreen({super.key});
+class ConsentScreen extends StatelessWidget {
+  const ConsentScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +36,7 @@ class SexualOrientationScreen extends StatelessWidget {
                       Container(
                         alignment: Alignment.topLeft,
                         child: Text(
-                          "Sexual Orientation",
+                          "Consent",
                           style: TextStyle(
                             color: Theme.of(context).colorScheme.onBackground,
                             fontSize: 40.0,
@@ -49,7 +47,7 @@ class SexualOrientationScreen extends StatelessWidget {
                       Container(
                         alignment: Alignment.topLeft,
                         child: Text(
-                          "By acknowledging and celebrating the wide range of sexual orientations and gender identities, we can help create a world where everyone feels welcome and understood. Keep in mind that there are others who share similar experiences, and by being open to learning and supporting each other, we can strengthen our connections and grow together in understanding and acceptance.",
+                          "By prioritizing consent, communication, and boundaries, you can feel safe and confident in your sexual experiences. This foundation fosters trust and understanding, empowering you and your partner to navigate your own unique journey.",
                           style: TextStyle(
                             color: Theme.of(context).colorScheme.onBackground,
                             fontSize: 17.0,
@@ -80,51 +78,55 @@ class SexualOrientationScreen extends StatelessWidget {
                       const EdgeInsets.only(right: 15, left: 15, bottom: 30),
                   child: Column(
                     children: const [
-                      SexualOrientationsCard(
-                        title: 'Understanding Sexual Orientations',
+                      SubtopicCard(
+                        title: 'Definition of Consent',
                         description:
-                            "Sexual orientation refers to whom you are attracted to emotionally, romantically, and sexually. Remember, everyone's experiences are unique, and it's important to respect and support each other. Let's make the world a more loving and understanding place for everyone!",
+                            "Consent is a clear, informed, and voluntary agreement between all parties involved in any form of sexual activity. Remember, consent must be given willingly, without coercion, pressure, or manipulation.",
                       ),
                       SubtopicCard(
-                        title:
-                            'The Difference Between Sex, Gender, and Sexual Orientation',
+                        title: 'Enthusiastic Consent',
                         description:
-                            "Understand that sex is assigned at birth, gender is a social and cultural construct, and sexual orientation is about your emotional, romantic, and sexual attractions. These three aspects are distinct and do not determine one another.",
+                            "When engaging in sexual activities, ensure that you and your partner are not only agreeing to the activity but are also actively interested and excited to participate.",
                       ),
                       SubtopicCard(
-                        title: 'Respect and Acceptance',
+                        title: 'Communication',
                         description:
-                            "Embrace and respect the diverse range of sexual orientations and gender identities that people may have. Accept and celebrate the uniqueness of each individual, fostering a supportive environment for everyone.",
+                            "Be open and honest with your partner about your boundaries, desires, and comfort levels. Check in with each other and respect each other's wishes at all times.",
                       ),
                       SubtopicCard(
-                        title: 'Coming Out and Self-Identification',
+                        title: 'The Role of Alcohol and Drugs',
                         description:
-                            "It's important to recognize that coming out is a personal and ongoing process. Offer support to your peers if they choose to disclose their sexual orientation or gender identity, and respect their privacy and feelings.",
-                      ),
-                      SexualOrientationMythsCard(
-                        title: 'Addressing Stereotypes and Myths',
-                        description:
-                            "Be aware of common stereotypes and myths surrounding sexual orientation and gender identity. Challenge these misconceptions and promote accurate information and understanding.",
+                            "Understand that alcohol and drugs can impair your judgment and your ability to give or receive consent. Consent cannot be given by someone who is incapacitated or under the influence.",
                       ),
                       SubtopicCard(
-                        title: 'Language and Terminology',
+                        title: 'Consent is Ongoing',
                         description:
-                            "Learn inclusive language and terminology to discuss sexual orientation and gender identity respectfully. Use the correct pronouns and terms when referring to individuals, and be open to learning if someone corrects you.",
+                            "Keep in mind that consent can be withdrawn or changed at any time during a sexual encounter, and it's essential to respect these changes.",
                       ),
                       SubtopicCard(
-                        title: 'The Importance of Allies',
+                        title: 'The Importance of Boundaries',
                         description:
-                            "Understand the role of allies in supporting LGBTQ+ individuals and creating inclusive environments. As an ally, educate yourself about the issues faced by LGBTQ+ people, stand up against discrimination, and actively support your peers.",
+                            "Set personal boundaries and respect the boundaries of others. Communicate your boundaries clearly and assertively.",
                       ),
                       SubtopicCard(
-                        title: 'Mental Health and Support',
+                        title: 'No Means No',
                         description:
-                            "Be aware that LGBTQ+ individuals may face unique mental health challenges due to societal stigma, discrimination, or internal struggles. Offer support and empathy, and encourage those who need help to reach out to trusted friends, family members, or professionals.",
+                            "If your partner expresses discomfort or refuses any activity, take it seriously and do not pressure or coerce them into engaging in sexual activity.",
                       ),
                       SubtopicCard(
-                        title: 'Safe Spaces and Resources',
+                        title: 'Body Language',
                         description:
-                            "Seek out safe spaces and resources, such as LGBTQ+ clubs, community centers, or online groups, to connect with others who share similar experiences and learn more about sexual orientation and gender identity.",
+                            "Pay attention to your partner's body language and recognize that some people may not verbally express their discomfort or lack of consent.",
+                      ),
+                      SubtopicCard(
+                        title: 'Moral Responsibility',
+                        description:
+                            "Always consider the ethical implications of consent, focusing on the importance of mutual respect, care, and empathy when engaging in sexual activities. Prioritize your partner's well-being and autonomy over any personal desires.",
+                      ),
+                      SubtopicCard(
+                        title: 'Bystander Intervention',
+                        description:
+                            "Learn to recognize potentially harmful situations and safely intervene when you witness someone who may be at risk.",
                       ),
                     ],
                   ),

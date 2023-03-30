@@ -3,11 +3,11 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:youphoria/shared/subtopic_card.dart';
 import 'package:youphoria/shared/subtopic_child_card.dart';
 
-class SexualOrientationsCard extends StatelessWidget {
+class CommonSTIsCard extends StatelessWidget {
   final String title;
   final String description;
 
-  const SexualOrientationsCard(
+  const CommonSTIsCard(
       {Key? key, required this.title, required this.description})
       : super(key: key);
 
@@ -43,44 +43,29 @@ class SexualOrientationsCard extends StatelessWidget {
                 ),
               ),
               const SubtopicChildCard(
-                title: 'Heterosexual',
+                title: 'Chlamydia',
                 description:
-                    "Attracted to the opposite gender. Like, a girl who's into guys or a guy who's into girls.",
+                    "According to the CDC, chlamydia is the most frequently reported bacterial STI in the United States. In 2019, there were over 1.8 million cases reported (CDC, 2019). Chlamydia is often asymptomatic, so regular testing is essential to detect and treat it early.",
               ),
               const SubtopicChildCard(
-                title: 'Homosexual',
+                title: 'Gonorrhea',
                 description:
-                    "Attracted to the same gender. This includes gay men (guys into guys) and lesbian women (girls into girls).",
+                    "Gonorrhea is another common bacterial STI. The CDC reported over 600,000 cases in the United States in 2019 (CDC, 2019). Like chlamydia, gonorrhea can be asymptomatic, making regular testing crucial for maintaining your sexual health.",
               ),
               const SubtopicChildCard(
-                title: 'Bisexual',
+                title: 'Human Papillomavirus (HPV)',
                 description:
-                    "Attracted to people of their own gender and another gender. It's not just about being into men and women, but any gender identities!",
+                    "HPV is the most common STI, with nearly all sexually active people contracting it at some point in their lives (CDC, 2021). Many strains of HPV are harmless, but some can lead to genital warts or even cancer. The HPV vaccine is highly effective in preventing infection from the most harmful strains.",
               ),
               const SubtopicChildCard(
-                title: 'Pansexual',
+                title: 'Genital Herpes',
                 description:
-                    "Attracted to others, no matter their gender. Pan folks can be into anyone, whether they're male, female, non-binary, genderfluid, or anything else.",
+                    "Genital herpes is a viral STI caused by the herpes simplex virus (HSV). According to the World Health Organization (WHO), about 13% of people aged 15-49 worldwide have HSV-2, which primarily causes genital herpes (WHO, 2020). Although there's no cure for herpes, antiviral medications can help manage outbreaks and reduce transmission risk.",
               ),
               const SubtopicChildCard(
-                title: 'Asexual',
+                title: 'Syphilis',
                 description:
-                    "Experiencing little or no sexual attraction. Asexuality is a spectrum, and some ace people might still feel romantic attraction or have other reasons for engaging in sexual activities.",
-              ),
-              const SubtopicChildCard(
-                title: 'Demisexual',
-                description:
-                    "Feeling sexual attraction only after forming a deep emotional bond. This can happen with people of any gender.",
-              ),
-              const SubtopicChildCard(
-                title: 'Queer',
-                description:
-                    "An umbrella term for anyone not identifying as heterosexual or cisgender. Some peeps use \"queer\" to describe their orientation when other labels don't quite fit.",
-              ),
-              const SubtopicChildCard(
-                title: 'Questioning',
-                description:
-                    "For those unsure or exploring their sexual orientation. It's totally cool to question and learn more about yourself!",
+                    "Syphilis is a bacterial infection that can have serious long-term consequences if left untreated. The CDC reported over 38,000 cases of primary and secondary syphilis in the United States in 2019 (CDC, 2019). Early detection and treatment with antibiotics are essential to prevent complications.",
               ),
             ],
           ),

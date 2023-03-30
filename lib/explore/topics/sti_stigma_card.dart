@@ -3,11 +3,11 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:youphoria/shared/subtopic_card.dart';
 import 'package:youphoria/shared/subtopic_child_card.dart';
 
-class SexualOrientationsCard extends StatelessWidget {
+class STIStigmaCard extends StatelessWidget {
   final String title;
   final String description;
 
-  const SexualOrientationsCard(
+  const STIStigmaCard(
       {Key? key, required this.title, required this.description})
       : super(key: key);
 
@@ -43,44 +43,33 @@ class SexualOrientationsCard extends StatelessWidget {
                 ),
               ),
               const SubtopicChildCard(
-                title: 'Heterosexual',
+                title:
+                    'Stigma 1: People with STIs are "dirty" or "promiscuous."',
                 description:
-                    "Attracted to the opposite gender. Like, a girl who's into guys or a guy who's into girls.",
+                    "Truth: Anyone who is sexually active can potentially contract an STI, regardless of their number of partners. It's essential to practice safer sex and get regularly tested, but having an STI doesn't define someone's character or worth.",
               ),
               const SubtopicChildCard(
-                title: 'Homosexual',
+                title:
+                    'Stigma 2: If you use protection, you won\'t get an STI.',
                 description:
-                    "Attracted to the same gender. This includes gay men (guys into guys) and lesbian women (girls into girls).",
+                    "Truth: While using protection (like condoms or dental dams) significantly reduces the risk of STI transmission, no method is 100% foolproof. It's still crucial to get tested regularly and communicate with your partners about STIs.",
               ),
               const SubtopicChildCard(
-                title: 'Bisexual',
+                title:
+                    'Stigma 3: You can tell if someone has an STI just by looking at them.',
                 description:
-                    "Attracted to people of their own gender and another gender. It's not just about being into men and women, but any gender identities!",
+                    "Truth: Many STIs can be asymptomatic, meaning they don't show any visible signs or symptoms. The only way to know for sure is to get tested, and it's important not to make assumptions about someone's STI status.",
               ),
               const SubtopicChildCard(
-                title: 'Pansexual',
+                title:
+                    'Stigma 4: STIs only happen to people who aren\'t careful.',
                 description:
-                    "Attracted to others, no matter their gender. Pan folks can be into anyone, whether they're male, female, non-binary, genderfluid, or anything else.",
+                    "Truth: Even people who take precautions can contract an STI. Sometimes, transmission can occur despite someone's best efforts. It's essential to approach these situations with understanding and compassion, rather than judgment.",
               ),
               const SubtopicChildCard(
-                title: 'Asexual',
+                title: 'Stigma 5: Having an STI means your sex life is over.',
                 description:
-                    "Experiencing little or no sexual attraction. Asexuality is a spectrum, and some ace people might still feel romantic attraction or have other reasons for engaging in sexual activities.",
-              ),
-              const SubtopicChildCard(
-                title: 'Demisexual',
-                description:
-                    "Feeling sexual attraction only after forming a deep emotional bond. This can happen with people of any gender.",
-              ),
-              const SubtopicChildCard(
-                title: 'Queer',
-                description:
-                    "An umbrella term for anyone not identifying as heterosexual or cisgender. Some peeps use \"queer\" to describe their orientation when other labels don't quite fit.",
-              ),
-              const SubtopicChildCard(
-                title: 'Questioning',
-                description:
-                    "For those unsure or exploring their sexual orientation. It's totally cool to question and learn more about yourself!",
+                    "Truth: Many STIs are treatable or manageable with the right care and medication. It's possible to maintain a fulfilling sex life while living with an STI, as long as you take necessary precautions and communicate openly with your partners.",
               ),
             ],
           ),

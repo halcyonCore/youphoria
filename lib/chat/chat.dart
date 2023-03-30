@@ -45,6 +45,7 @@ class _ChatScreenState extends State<ChatScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        foregroundColor: Theme.of(context).colorScheme.onBackground,
         flexibleSpace: Container(
           decoration: BoxDecoration(
             borderRadius: const BorderRadius.only(
@@ -74,18 +75,6 @@ class _ChatScreenState extends State<ChatScreen> {
             bottomRight: Radius.circular(40),
           ),
         ),
-        actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: 6),
-            child: IconButton(
-              onPressed: () {},
-              icon: Icon(
-                Icons.more_vert_rounded,
-                color: Theme.of(context).colorScheme.onBackground,
-              ),
-            ),
-          ),
-        ],
       ),
       body: SafeArea(
         child: Container(

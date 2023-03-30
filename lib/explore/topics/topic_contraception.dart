@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:youphoria/explore/topics/sexual_orientations_card.dart';
-import 'package:youphoria/explore/topics/sexual_orientations_myths_card.dart';
 import 'package:youphoria/shared/subtopic_card.dart';
 import 'package:youphoria/explore/topics/gender_identities_card.dart';
 
-class SexualOrientationScreen extends StatelessWidget {
-  const SexualOrientationScreen({super.key});
+class ContraceptionScreen extends StatelessWidget {
+  const ContraceptionScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +36,7 @@ class SexualOrientationScreen extends StatelessWidget {
                       Container(
                         alignment: Alignment.topLeft,
                         child: Text(
-                          "Sexual Orientation",
+                          "Contraception",
                           style: TextStyle(
                             color: Theme.of(context).colorScheme.onBackground,
                             fontSize: 40.0,
@@ -49,7 +47,7 @@ class SexualOrientationScreen extends StatelessWidget {
                       Container(
                         alignment: Alignment.topLeft,
                         child: Text(
-                          "By acknowledging and celebrating the wide range of sexual orientations and gender identities, we can help create a world where everyone feels welcome and understood. Keep in mind that there are others who share similar experiences, and by being open to learning and supporting each other, we can strengthen our connections and grow together in understanding and acceptance.",
+                          "By learning about the various contraceptive options and being open to discussing them, you can take charge of your sexual health and make responsible choices that work best for you. Being informed and proactive is a great way to ensure a healthier and more fulfilling experience.",
                           style: TextStyle(
                             color: Theme.of(context).colorScheme.onBackground,
                             fontSize: 17.0,
@@ -80,51 +78,45 @@ class SexualOrientationScreen extends StatelessWidget {
                       const EdgeInsets.only(right: 15, left: 15, bottom: 30),
                   child: Column(
                     children: const [
-                      SexualOrientationsCard(
-                        title: 'Understanding Sexual Orientations',
+                      SubtopicCard(
+                        title: 'Barrier Methods',
                         description:
-                            "Sexual orientation refers to whom you are attracted to emotionally, romantically, and sexually. Remember, everyone's experiences are unique, and it's important to respect and support each other. Let's make the world a more loving and understanding place for everyone!",
+                            "Barrier methods, like condoms and dental dams, not only help prevent pregnancy but also protect against sexually transmitted infections (STIs).",
                       ),
                       SubtopicCard(
-                        title:
-                            'The Difference Between Sex, Gender, and Sexual Orientation',
+                        title: 'Hormonal Methods',
                         description:
-                            "Understand that sex is assigned at birth, gender is a social and cultural construct, and sexual orientation is about your emotional, romantic, and sexual attractions. These three aspects are distinct and do not determine one another.",
+                            "These methods, such as birth control pills, patches, and injections, use hormones to prevent pregnancy. While hormonal birth control can be effective for many people, it's important to be aware of potential side effects and drawbacks, which can include mood swings, weight gain, headaches, and changes in menstrual bleeding patterns.",
                       ),
                       SubtopicCard(
-                        title: 'Respect and Acceptance',
+                        title: 'Intrauterine Devices (IUDs)',
                         description:
-                            "Embrace and respect the diverse range of sexual orientations and gender identities that people may have. Accept and celebrate the uniqueness of each individual, fostering a supportive environment for everyone.",
+                            "IUDs are small, T-shaped devices inserted into the uterus by a healthcare provider. They can be hormonal or non-hormonal (copper) and offer long-term, reversible contraception.",
                       ),
                       SubtopicCard(
-                        title: 'Coming Out and Self-Identification',
+                        title: 'Emergency Contraception',
                         description:
-                            "It's important to recognize that coming out is a personal and ongoing process. Offer support to your peers if they choose to disclose their sexual orientation or gender identity, and respect their privacy and feelings.",
-                      ),
-                      SexualOrientationMythsCard(
-                        title: 'Addressing Stereotypes and Myths',
-                        description:
-                            "Be aware of common stereotypes and myths surrounding sexual orientation and gender identity. Challenge these misconceptions and promote accurate information and understanding.",
+                            "Also known as the 'morning-after pill,' emergency contraception can be used after unprotected sex or contraceptive failure to help prevent pregnancy. It's not meant as a primary birth control method but can be helpful in certain situations.",
                       ),
                       SubtopicCard(
-                        title: 'Language and Terminology',
+                        title: 'Fertility Awareness Methods',
                         description:
-                            "Learn inclusive language and terminology to discuss sexual orientation and gender identity respectfully. Use the correct pronouns and terms when referring to individuals, and be open to learning if someone corrects you.",
+                            "These methods involve tracking the menstrual cycle to identify fertile days and either abstaining from or using protection during those times. It's important to be aware that fertility awareness methods, including 'the rhythm method,' can be significantly less reliable than other contraceptive options, especially for teens whose cycles may be irregular.",
                       ),
                       SubtopicCard(
-                        title: 'The Importance of Allies',
+                        title: 'Abstinence',
                         description:
-                            "Understand the role of allies in supporting LGBTQ+ individuals and creating inclusive environments. As an ally, educate yourself about the issues faced by LGBTQ+ people, stand up against discrimination, and actively support your peers.",
+                            "Choosing not to engage in sexual activity is the only 100% effective way to prevent pregnancy and STIs. It's important to respect each person's choice to be sexually active or abstain. There's no right or wrong choice when it comes to being sexually active or abstaining; what matters most is that everyone feels comfortable, confident, and respected in their decisions.",
                       ),
                       SubtopicCard(
-                        title: 'Mental Health and Support',
+                        title: 'Sterilization',
                         description:
-                            "Be aware that LGBTQ+ individuals may face unique mental health challenges due to societal stigma, discrimination, or internal struggles. Offer support and empathy, and encourage those who need help to reach out to trusted friends, family members, or professionals.",
+                            "This is a permanent form of birth control, such as tubal ligation or vasectomy, and is typically not recommended for teens or young adults. However, it's important to note that people with uteruses can sometimes face discrimination from doctors when seeking sterilization procedures like tubal ligation (getting your ‘tubes tied’), as they may be unfairly pressured to consider their potential desire for children in the future. Everyone has the right to make decisions about their own reproductive health, and it's essential to advocate for your needs and ensure your healthcare provider respects your choices.",
                       ),
                       SubtopicCard(
-                        title: 'Safe Spaces and Resources',
+                        title: 'Inclusivity and Contraception',
                         description:
-                            "Seek out safe spaces and resources, such as LGBTQ+ clubs, community centers, or online groups, to connect with others who share similar experiences and learn more about sexual orientation and gender identity.",
+                            "Remember that contraception is important for people of all genders and orientations. Be open to discussing options with your partner(s) and healthcare provider to find the best choice for your unique situation.",
                       ),
                     ],
                   ),
