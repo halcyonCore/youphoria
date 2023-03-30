@@ -1,16 +1,17 @@
-# youphoria
+# YOUphoria
 
-A new Flutter project.
+A comprehensive sex education app for teens.
 
-## Getting Started
+Inadequate access to accurate and inclusive sex education leaves many teens unprepared to navigate their sexual health and relationships safely, leading to unintended consequences and disparities among diverse populations.
 
-This project is a starting point for a Flutter application.
+## How to Run
 
-A few resources to get you started if this is your first Flutter project:
+1. Clone the repo
+2. Make an [API key from OpenAI](https://help.openai.com/en/articles/4936850-where-do-i-find-my-secret-api-key)
+3. Make a .env file and enter your OpenAI API key as OPENAI_API_KEY="your_api_key_here"
+3. While in your project directory, enter the following terminal command:  
+    $ flutter run
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
+For additional help, please view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
