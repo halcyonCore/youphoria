@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_polyline_points/flutter_polyline_points.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:location/location.dart';
 import 'package:youphoria/constants/constants.dart';
@@ -23,13 +22,16 @@ class _GoogleMapsScreenState extends State<GoogleMapsScreen> {
 
   List<LatLng> polylineCoordinates = [startLocation, destinationLocation];
   LocationData? currentLocation;
+  Timer? _timer;
 
   Future<void> getCurrentLocation() async {
     Location location = Location();
     try {
       currentLocation = await location.getLocation();
       print('currentLocation: $currentLocation');
-      setState(() {});
+      if (mounted) {
+        setState(() {});
+      }
     } catch (e) {
       print('Error: ${e.toString()}');
       // Handle error here
@@ -45,12 +47,6 @@ class _GoogleMapsScreenState extends State<GoogleMapsScreen> {
     );
 
     if (result.points.isNotEmpty) {
-      // result.points.forEach(
-      //   (PointLatLng point) => polylineCoordinates.add(
-      //     LatLng(point.latitude, point.longitude),
-      //   ),
-      // );
-      // setState(() {});
       if (result.points.isNotEmpty) {
         setState(() {
           polylineCoordinates.clear();
@@ -64,12 +60,9 @@ class _GoogleMapsScreenState extends State<GoogleMapsScreen> {
 
   @override
   void initState() {
-    // getCurrentLocation();
-    // getPolyPoints();
-    // super.initState();
     super.initState();
     getCurrentLocation();
-    Timer.periodic(const Duration(seconds: 5), (_) {
+    _timer = Timer.periodic(const Duration(seconds: 5), (_) {
       getCurrentLocation();
     });
   }
@@ -83,6 +76,12 @@ class _GoogleMapsScreenState extends State<GoogleMapsScreen> {
   }
 
   @override
+  void dispose() {
+    _timer?.cancel();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return FutureBuilder(
       future: getCurrentLocation(),
@@ -92,8 +91,8 @@ class _GoogleMapsScreenState extends State<GoogleMapsScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Text('Loading map...'),
+              children: const [
+                Text('Loading map...'),
                 // SpinKitChasingDots(),
               ],
             ),
@@ -113,22 +112,13 @@ class _GoogleMapsScreenState extends State<GoogleMapsScreen> {
           ),
           polylines: {
             Polyline(
-              polylineId: PolylineId('route'),
+              polylineId: const PolylineId('route'),
               color: Theme.of(context).colorScheme.primary,
               width: 6,
               points: polylineCoordinates,
             ),
           },
           markers: {
-            // Marker(
-            //   markerId: const MarkerId('currentLocation'),
-            //   position: currentLocation != null
-            //       ? LatLng(
-            //           currentLocation!.latitude!,
-            //           currentLocation!.longitude!,
-            //         )
-            //       : startLocation,
-            // ),
             const Marker(
               markerId: MarkerId('start'),
               position: startLocation,

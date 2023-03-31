@@ -2,7 +2,6 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:youphoria/chat/text_widget.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class ChatWidget extends StatefulWidget {
   final String messsage;
