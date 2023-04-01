@@ -40,6 +40,7 @@ class _AppState extends State<App> {
             home: const LoginScreen(),
             routes: appRoutes,
             theme: theme.toThemeData(),
+            debugShowCheckedModeBanner: false,
           );
         }
 

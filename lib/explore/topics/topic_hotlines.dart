@@ -39,7 +39,7 @@ class HotlinesScreen extends StatelessWidget {
                       Container(
                         alignment: Alignment.topLeft,
                         child: Text(
-                          "Consent",
+                          "Hotlines",
                           style: TextStyle(
                             color: Theme.of(context).colorScheme.onBackground,
                             fontSize: 40.0,
@@ -50,7 +50,7 @@ class HotlinesScreen extends StatelessWidget {
                       Container(
                         alignment: Alignment.topLeft,
                         child: Text(
-                          "By prioritizing consent, communication, and boundaries, you can feel safe and confident in your sexual experiences. This foundation fosters trust and understanding, empowering you and your partner to navigate your own unique journey.",
+                          "",
                           style: TextStyle(
                             color: Theme.of(context).colorScheme.onBackground,
                             fontSize: 17.0,
